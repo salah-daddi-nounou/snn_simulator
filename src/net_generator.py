@@ -39,6 +39,44 @@ class Synapse:
             self.input_index, self.output_index, self.input_index, self.output_index
         ) + paps_str + " \\\n\t\t" + seeds_str + "\n"
 
+class Synapse_subskt:
+    """
+    A class to specify a netlist bloc of the synapse subcircuit named compound_synapse, 
+    which will be called by all the synapsesi. It is composed of multiple MTJs (the number is given as attribute), 
+    and it makes call of the cellPMAMTJ subcircuit which is predefined in the initial netlist file.
+    A method takes a template, adds parameters to it : either to set stochasticity, variability,
+    temperature and its variation or not, and sets as parameters the initial state of the MTJ, and the seed. 
+    It then adds the string bloc of the synapse subcircuit only once to the final netlist. 
+
+    Attributes
+    ----------
+    num_cells : int
+        The number of MTJ cells in each synapse.
+
+    Methods
+    -------
+    generate_netlist_bloc():
+        Generates a string bloc specefic to the compound_synapse subcircuit in the final netlist file. 
+    """
+
+    def __init__(self, num_cells):
+        self.num_cells = num_cells
+
+    def generate_netlist_bloc(self):
+        template = ("subckt compound_synapse ter1 ter2 \n"
+                    "parameters {} \n")
+
+        parameters = " ".join(["seed{}".format(i+1) for i in range(self.num_cells)] +
+                              ["PAP{}".format(i+1) for i in range(self.num_cells)])
+        
+        cells = ""
+        for i in range(self.num_cells):
+            cell_line = ("\tcell{} (ter1 ter2) cellPMAMTJ   param1=gl_STO   param2=gl_RV   param3=gl_T   param4=gl_Temp_var   "
+                         "param5=PAP{}   param6=seed{}\n".format(i+1, i+1, i+1))
+            cells += cell_line
+        
+        netlist_bloc = template.format( parameters) + cells + "ends compound_synapse\n"
+        return netlist_bloc
 
 class Input_neuron:
     """
@@ -96,46 +134,6 @@ class Output_neuron:
         
         return template.format(self.output_index, self.output_index)
 
-
-class Synapse_subskt:
-    """
-    A class to specify a netlist bloc of the synapse subcircuit named compound_synapse, 
-    which will be called by all the synapsesi. It is composed of multiple MTJs (the number is given as attribute), 
-    and it makes call of the cellPMAMTJ subcircuit which is predefined in the initial netlist file.
-    A method takes a template, adds parameters to it : either to set stochasticity, variability,
-    temperature and its variation or not, and sets as parameters the initial state of the MTJ, and the seed. 
-    It then adds the string bloc of the synapse subcircuit only once to the final netlist. 
-
-    Attributes
-    ----------
-    num_cells : int
-        The number of MTJ cells in each synapse.
-
-    Methods
-    -------
-    generate_netlist_bloc():
-        Generates a string bloc specefic to the compound_synapse subcircuit in the final netlist file. 
-    """
-
-    def __init__(self, num_cells):
-        self.num_cells = num_cells
-
-    def generate_netlist_bloc(self):
-        template = ("subckt compound_synapse ter1 ter2 \n"
-                    "parameters {} \n")
-
-        parameters = " ".join(["seed{}".format(i+1) for i in range(self.num_cells)] +
-                              ["PAP{}".format(i+1) for i in range(self.num_cells)])
-        
-        cells = ""
-        for i in range(self.num_cells):
-            cell_line = ("\tcell{} (ter1 ter2) cellPMAMTJ   param1=gl_STO   param2=gl_RV   param3=gl_T   param4=gl_Temp_var   "
-                         "param5=PAP{}   param6=seed{}\n".format(i+1, i+1, i+1))
-            cells += cell_line
-        
-        netlist_bloc = template.format( parameters) + cells + "ends compound_synapse\n"
-        return netlist_bloc
-
 class Separator:
     """
     A class to seperate between componenets in the netlist for a better formatting.
@@ -190,7 +188,7 @@ class Netlist:
 
 class NetworkGenerator:
     """
-    The main clas that generates all the netlist file, it is based on the Netlist class, 
+    The main class that generates all the netlist file, it is based on the Netlist class, 
     It iterates over all the components by group of similar ones, it appends the Netlist instance of 
     each component to the components list, while adding separation formatting between groups of similar components.
 
