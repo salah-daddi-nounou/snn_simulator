@@ -1,0 +1,44 @@
+parameters delay2=1.2e-07 delay1=1.2e-07 V_pre_end=-0.09 V_pre=0.15 \
+    V_post_min=-0.1 V_post_max=0.1 W_post_min=7e-06 W_post_max=1e-06 \
+    W_pre=0.06 slope=0 seed4=7382 seed3=2348 seed2=4819 seed1=8683 PAP0=0 \
+    PAP1=1 gl_Temp_var=0 gl_T=300 gl_RV=0 gl_STO=1
+ahdl_include "/home/users/daddinos/projet_cmos28fdsoi_12/full_SNN/wang_model.va"
+
+subckt cellPMAMTJ State T1 T2
+parameters param1 param2 param3 param4 param5 param6 
+    R_0 (State 0) resistor r=1
+    R_1 (net0 0) resistor r=1
+    R_2 (net1 0) resistor r=1
+    I (T1 T2 State net0 net1) Model \ 
+	STO      = param1 \	
+	RV       = param2 \
+	T        = param3 \
+    Temp_var = param4 \ 
+	PAP      = param5 \ 
+	STO_seed = param6
+ends cellPMAMTJ
+
+//V2 (down 0) vsource type=pulse val0=0 val1=V_amp width=V_wid 
+//V1 (top 0) vsource type=dc dc=0 // T1: pinned layer 
+
+
+post (top 0) vsource type=pwl delay=delay2 wave=[ 0 0 1p (V_post_min) \
+        (W_post_min) (V_post_min) (W_post_min +1p) (V_post_max) \
+        (W_post_min + W_post_max) (V_post_max) (W_post_min + W_post_max +1p) 0 ]
+
+
+pre (down 0) vsource type=pwl wave=[ delay1 0 (delay1+1p) (V_pre - slope) \
+        (delay1+W_pre) (V_pre_end + slope) (delay1+W_pre+1p) 0 (2*delay1+W_pre) 0 (2*delay1+W_pre+1p) 30m]
+
+//pre (down 0) vsource type=pwl wave=[ delay1 0 (delay1+50n) (V_pre - slope) \
+//        (delay1+W_pre) (V_pre_end + slope) (delay1+W_pre+100p) 0 (delay1+W_pre+150n) 0 (delay1+W_pre+150.1n) 30m]
+
+
+cell1 (st_mtj1 top down) cellPMAMTJ   param1=gl_STO   param2=gl_RV   param3=gl_T   param4=gl_Temp_var   param5=PAP1   param6 =seed1
+simulatorOptions options reltol=1e-3 vabstol=1e-6 iabstol=1e-12 temp=27 \
+    tnom=27 multithread=on scalem=1.0 scale=1.0 gmin=1e-12 rforce=1 \
+    maxnotes=5 maxwarns=5 digits=5 cols=80 pivrel=1e-3 
+tran tran stop=1300n start=1n step=3n maxstep=3n minstep=3n \
+    annotate=status oppoint=no maxiters=5 
+save pre:p down top 
+saveOptions options save=allpub

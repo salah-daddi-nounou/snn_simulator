@@ -1,0 +1,19 @@
+ahdl_include "/home/users/daddinos/projet_cmos28fdsoi_12/full_SNN/wang_model.va"
+ahdl_include "/home/users/daddinos/projet_cmos28fdsoi_12/full_SNN/in_neuron.va"
+ahdl_include "/home/users/daddinos/projet_cmos28fdsoi_12/full_SNN/out_neuron.va"
+
+// ===================================================== 
+subckt cellPMAMTJ T1 T2 
+parameters param1 param2 param3 param4 param5 param6 
+    I (T2 T1 ) Model \ 
+	STO      = param1 \	
+	RV       = param2 \
+	T        = param3 \
+    Temp_var = param4 \ 
+	PAP      = param5 \ 
+	STO_seed = param6
+ends cellPMAMTJ
+// ===================================================== 
+
+
+ 

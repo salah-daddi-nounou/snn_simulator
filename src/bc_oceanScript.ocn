@@ -1,0 +1,53 @@
+simulator( 'spectre )
+;design(	    "/home/users/daddinos/projet_cmos28fdsoi_12/full_SNN/netlist_ocn/netlist")
+;resultsDir( "/home/users/daddinos/projet_cmos28fdsoi_12/full_SNN/results_ocn" )
+
+design( "${netlist}") 
+resultsDir( "${process_dir}" )
+
+analysis('tran ?start "1n" ?stop "1300n" ?step "3n" ?maxstep "3n"  ?minstep "3n" 
+        ?write ""  ?writefinal "" ?oppoint "no" ?finalTimeOp nil )
+
+envOption(   'userCmdLineOption "-log ++aps +postlayout" 'restart  "N" 'savestate  "N" 'autoDisplay  nil )
+option(	     'multithread "on" 'checklimitdest  "" 'sensfile  "" )
+saveOption(  ?infoOptions list(list("modelParameter" "models" "rawfile" "" "" "" nil)   list("element" "inst" "rawfile" "" "" "" nil) 
+                          list("outputParameter" "output" "rawfile" "" "" "" nil)       list("designParamVals" "parameters" "rawfile" "" "" "" nil)
+                          list("primitives" "primitives" "rawfile" "" "" "" nil)        list("subckts" "subckts" "rawfile" "" "" "" nil) 
+                          list("asserts" "assert" "rawfile" "" "" "" nil)               list("extremeinfo" "all" "logfile" "" "" "" nil) ) 
+                          ?simOutputFormat ""  )
+
+desVar(	  "gl_STO"       1        	    )
+desVar(	  "gl_RV"        0 	            )
+desVar(	  "gl_T"         300	        )
+desVar(	  "gl_Temp_var"  0              )
+desVar(	  "PAP1"         1              )
+desVar(	  "PAP0"         0              )
+desVar(	  "seed1"        ${sto_seed1}   )
+desVar(	  "seed2"        ${sto_seed2}   )
+desVar(	  "seed3"        ${sto_seed3}   )
+desVar(	  "seed4"        ${sto_seed4}   )
+desVar(	  "slope"        0	            )
+desVar(	  "W_pre" 	     ${W_pre}       )
+desVar(	  "W_post_max"   ${W_post_max}	)
+desVar(	  "W_post_min" 	 ${W_post_min}  )
+desVar(	  "V_post_max" 	 ${V_post_max}  )
+desVar(	  "V_post_min" 	 ${V_post_min}  )
+desVar(	  "V_pre" 	     ${V_pre} 	    )
+desVar(	  "V_pre_end"    ${V_pre_end}   )
+desVar(	  "delay1"       120n	        )
+desVar(	  "delay2"       1n	        )
+
+paramAnalysis("delay2" ?start 0 ?stop 120n ?step 60n )
+
+save( 'v "top" "down")
+save( 'i "pre:p")  
+paramRun()  ;monteRun()   ;run()
+selectResults('tran)
+outputs()           ; prints all signal names
+
+
+ocnPrint(?output "${results_file}" 1e6 * value( i("pre:p") / (v("top") - v("down")) ,1280n) 
+        ?numSpaces 5 ?width 15 ?precision 5 ?numberNotation 'none  ) 
+
+exit()
+
