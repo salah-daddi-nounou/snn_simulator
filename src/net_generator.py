@@ -1,21 +1,17 @@
 class Synapse:
     """
     A class to specify a netlist bloc that describes an MTJ-based synapse of the SNN, 
-    a method takes a template, adds information of the current synapse 
-    (connected neurons, number of MTJs per synapse, initialized states, seeds,... )
-    and adds it to the netlist. Each synapse calls a compound_synapse subcircuit which
-    is added once to the netlist with annother class. 
+    generate_netlist_bloc is a method that returns as string which represents a template 
+    bloc of the synapse to be included in the netlist later. It personalizes the synapse
+    at the current iteration by adding its specific informatio (connected neurons, number 
+    of MTJs per synapse, initialized states, seeds,... ). The synapse template calls the 
+    compound_synapse subcircuit which should be included once in the head of the netlist.
 
-    Attributes
-    ----------
-    input_index : int
-        The index of the input neuron connected to this synapse.
-    output_index : int
-        The index of the output neuron connected to this synapse.
-    paps : list of int
-        The list of initial states of free layers for each MTJ in the synapse. (0 parallel, 1 anti-parallel)
-    seeds : list of int
-        The list of seed values used for stochasticity for each MTJ in the synapse.
+    Attributes:
+        input_index [int]: The index of the input neuron connected to this synapse.
+        output_index [int]: The index of the output neuron connected to this synapse.
+        paps [list of int]: The list of initial states of free layers for each MTJ in the synapse. (0 parallel, 1 anti-parallel).
+        seeds [list of int]: The list of seed values used for stochasticity for each MTJ in the synapse.
 
     Methods
     -------
@@ -42,16 +38,15 @@ class Synapse:
 class Synapse_subskt:
     """
     A class to specify a netlist bloc of the synapse subcircuit named compound_synapse, 
-    which will be called by all the synapsesi. It is composed of multiple MTJs (the number is given as attribute), 
+    which will be called by all the synapses. It is composed of multiple MTJs (the number is given as attribute), 
     and it makes call of the cellPMAMTJ subcircuit which is predefined in the initial netlist file.
-    A method takes a template, adds parameters to it : either to set stochasticity, variability,
+    generate_netlist_bloc is a method that returns the subcircuit template to be included in the netlist.
+    It takes an initial template, adds parameters to it : either to set stochasticity, variability,
     temperature and its variation or not, and sets as parameters the initial state of the MTJ, and the seed. 
-    It then adds the string bloc of the synapse subcircuit only once to the final netlist. 
 
-    Attributes
-    ----------
-    num_cells : int
-        The number of MTJ cells in each synapse.
+    Attributes:
+        num_cells [int]: The number of MTJ cells in each synapse.
+
 
     Methods
     -------
@@ -83,15 +78,12 @@ class Input_neuron:
     A class to specify a netlist bloc that describes an input neuron of the SNN, 
     a method takes a template, adds information of the current neuron 
     (neuron index, number of spikes associated to that input neuron, the duration of a single input spike, 
-    and the duration a single example is presented to the netowrk). It then adds the string bloc of that neuron 
-    to the netlist. 
+    and the duration of presenting an input example to the netowrk). That sting bloc will then be included
+    in the final netlist.
  
-    Attributes
-    ----------
-    input_index : int
-        The index of this input neuron.
-    n_spikes : int
-        The number of spikes this neuron will generate.
+    Attributes:
+        input_index [int]: The index of this input neuron.
+        n_spikes [int]: The number of spikes this neuron will generate.
 
     Methods
     -------
@@ -112,13 +104,12 @@ class Output_neuron:
     """
     A class to specify a netlist bloc of an output neuron of the SNN, 
     a method takes a template, adds information of the current neuron 
-    (neuron index, membrane threshold). It then adds the string bloc of that neuron 
-    to the netlist. 
+    (neuron index, membrane threshold). That sting bloc will then be included
+    in the final netlist.
 
-    Attributes
-    ----------
-    output_index : int
-        The index of this output neuron.
+    Attributes:
+        output_index [int]: The index of this output neuron.
+
 
     Methods
     -------
@@ -149,16 +140,14 @@ class Separator:
 
 class Netlist:
     """
-    A class used to assemble a class instnace definition of each component, and put them together in a list called components,
-    it appends the components instances iterativeley, it then uses a method to generate a netlist file based on the instances 
-    in the components list.
+    A class which assemles the instances of all the components, it then generates the netlist file
+    add_component is a method that appends the instances of the componenets in one list called components.
+    generate_netlist_file is a method that generates the diffrent parts of the netlist by using the generate_netlist_bloc()
+    which is comment to all the components classes. 
     
-    Attributes
-    ----------
-    file_path : str
-        The path to the file where the netlist will be written.
-    components : list
-        The list of components instances (synapses, neurons, etc.)
+    Attributes:
+        file_path [str]: The path to the file where the netlist will be written.
+        components [list]: The list of components instances (synapses, neurons, etc.).
 
     Methods
     -------
@@ -186,26 +175,20 @@ class Netlist:
         with open(self.file_path, "w") as file1:
             file1.write(content)
 
+
 class NetworkGenerator:
     """
-    The main class that generates all the netlist file, it is based on the Netlist class, 
-    It iterates over all the components by group of similar ones, it appends the Netlist instance of 
+    The main class that generates all the netlist file, it is based on the Netlist class,
+    It iterates over all the components by group of similar ones, it appends instances of 
     each component to the components list, while adding separation formatting between groups of similar components.
 
-    Attributes
-    ----------
-    file_path : str
-        The path to the file where the netlist will be written.
-    num_input : int
-        The number of input neurons in the network.
-    num_output : int
-        The number of output neurons in the network.
-    num_cells : int
-        The number of MTJ cells in each synapse.
-    netlist : Netlist
-        The netlist object that will be written to a file.
-    n_spik_vec : list of int
-        A list containing the number of spikes for each input neuron.
+    Attributes:
+        file_path [str]: The path to the file where the netlist will be written.
+        num_input [int]: The number of input neurons in the network.
+        num_output [int]: The number of output neurons in the network.
+        num_cells [int]: The number of MTJ cells in each synapse.
+        netlist [Netlist]: The netlist object that will be written to a file.
+        n_spik_vec [list of int]: A list containing the number of spikes for each input neuron.
 
     Methods
     -------
@@ -250,3 +233,4 @@ class NetworkGenerator:
             self.netlist.add_component(output_neuron)
 
         self.netlist.generate_netlist_file()
+

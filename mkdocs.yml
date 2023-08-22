@@ -1,9 +1,9 @@
 site_name: SNN_simulator
-#repo_url: https://github.com/servinagrero/nimphel
-#repo_name: snn_simulator
+#repo_url: 
+#repo_name: 
 edit_url: ""
 theme:
-    #logo: img/logo.svg
+    #logo: 
     name: material
     palette:
         - scheme: default
@@ -13,7 +13,7 @@ theme:
           primary: black
           accent: light blue
         - scheme: slate
-          toggle:
+          toggle: 
             icon: material/toggle-switch
             name: Switch to light mode
           primary: white
@@ -22,7 +22,7 @@ theme:
         text: Roboto
         code: Roboto Mono
     #icon:
-        #repo: fontawesome/brands/github
+        #repo: 
     features:
         - navigation.instant
         - navigation.tabs
@@ -33,12 +33,19 @@ theme:
         - content.code.annotate
 
 #extra_css:
-#  - stylesheets/extra.css
+#  - 
   
 plugins:
-#  - search
+  - search
 #  - autorefs
-  - mkdocstrings
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          rendering:
+            show_type_hint: true
+
+
 
 markdown_extensions:
   - attr_list
@@ -56,12 +63,4 @@ nav:
     - Introduction: index.md
     - Netlist generator: net_generator.md
     
-#    - Getting started: starting.md
-#    - Elements:
-#        - Components: elements/component.md
-#        - Subcircuits: elements/subcircuit.md
-#        - Circuits: elements/circuit.md
-#    - Manipulation: manipulation.md
-#    - Parsers: parsers.md
-#    - Exporters: exporters.md
-#    - API Reference: api.md  
+
