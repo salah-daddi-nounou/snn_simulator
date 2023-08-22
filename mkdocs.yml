@@ -1,6 +1,7 @@
 site_name: SNN_simulator
-#repo_url: 
-#repo_name: 
+#site_url: https://salah-daddi-nounou.github.io/snn_simulator/
+repo_url: https://github.com/salah-daddi-nounou/snn_simulator
+repo_name: snn_simulator
 edit_url: ""
 theme:
     #logo: 
