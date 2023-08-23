@@ -62,7 +62,7 @@ markdown_extensions:
   - pymdownx.superfences
 
 nav:
-    - Introduction: docs/index.md
-    - Netlist generator: docs/net_generator.md
+    - Introduction: index.md
+    - Netlist generator: net_generator.md
     
 
