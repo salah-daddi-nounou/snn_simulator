@@ -58,12 +58,12 @@ theme:
 plugins:
   - search
 #  - autorefs
-  - mkdocstrings
-#      default_handler: python
-#      handlers:
-#        python:
-#          rendering:
-#            show_type_hint: true
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          rendering:
+            show_type_hint: true
 
 
 
