@@ -2,7 +2,7 @@ site_name: SNN simulator
 site_url: https://salah-daddi-nounou.github.io/               # my user github page 
 repo_url: https://github.com/salah-daddi-nounou/snn_simulator # to access repo from docs
 repo_name: snn_simulator
-# edit_uri: edit/main/docs/            to allow users editing the page
+# edit_uri: edit/main/docs/            to allow edit the page
 
 theme:
     #logo: img/logo.svg
