@@ -6,6 +6,6 @@ The class `NetworkGenerator` is the main class that assembles all the components
 Finally `Separotor` is a class to add a separation between a group of similar componenets for a bette rformatting.
 
 
-::: snn_simulator.net_generator
+::: src.net_generator
 
 

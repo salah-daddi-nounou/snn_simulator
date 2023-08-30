@@ -1,4 +1,4 @@
-site_name: SNN_simulator
+site_name: SNN simulator
 site_url: https://salah-daddi-nounou.github.io/               # my user github page 
 repo_url: https://github.com/salah-daddi-nounou/snn_simulator # to access repo from docs
 repo_name: snn_simulator
@@ -8,18 +8,18 @@ theme:
     #logo: img/logo.svg
     name: material
     palette:
-        - scheme: default
-          toggle:
-            icon: material/toggle-switch-off-outline
-            name: Switch to dark mode
-          primary: black
-          accent: light blue
-        - scheme: slate
-          toggle:
-            icon: material/toggle-switch
-            name: Switch to light mode
-          primary: white
-          accent: dark blue
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode  
 
     font:
         text: Roboto
@@ -27,13 +27,30 @@ theme:
     icon:
         repo: fontawesome/brands/github
     features:
-        - navigation.instant
-        - navigation.tabs
-        - navigation.top
-        - navigation.sections
-        - navigation.expand
-        - toc.integrate
+        - announce.dismiss
+        - content.action.edit
+        - content.action.view
         - content.code.annotate
+        - content.code.copy
+        - content.code.select
+        # - content.tabs.link
+        - content.tooltips
+        # - header.autohide
+        # - navigation.expand
+        - navigation.footer
+        - navigation.indexes
+        - navigation.instant
+        # - navigation.prune
+        - navigation.sections
+        - navigation.tabs
+        # - navigation.tabs.sticky
+        - navigation.top
+        - navigation.tracking
+        - search.highlight
+        - search.share
+        - search.suggest
+        - toc.follow
+        - toc.integrate    
 
 #extra_css:
 #  - 
