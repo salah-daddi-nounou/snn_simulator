@@ -21,7 +21,7 @@ num_input = 25
 num_output = 1
 num_cells = 6
 
-sim_time = 600e-3                                   # (s) duration of simulation & input presentaion
+sim_time = 1e-3#600e-3                                   # (s) duration of simulation & input presentaion
 spike_duration = 60e-3                              # (s) duration of input spikes
 mem_vth = 50e-3                                     # (V) output membrane potential threshold 
 
@@ -44,15 +44,18 @@ def run_simulation(params):
     run_simulation takes an initial dict containing global parameters
     and adds other local parameters to that dict 
     '''
-    tic = tm.time()    
-    process_dir = f"process_{os.getpid()}"                                                                     
-    abs_process_dir = os.path.abspath(process_dir)                  
-    if not os.path.exists(process_dir):   
-        os.mkdir(process_dir)             
-        os.mkdir(process_dir+"/netlist_ocn")
-    copy_tree("./netlist_ocn", f"./{process_dir}/netlist_ocn")   
+    tic = tm.time()   
+
+    base_dir = os.path.abspath("../../snn_sim_folders/")
+    process_dir = f"process_{os.getpid()}"
+    abs_process_dir = os.path.join(base_dir, process_dir)
+
+    if not os.path.exists(abs_process_dir):   
+        os.mkdir(abs_process_dir)             
+        os.mkdir(abs_process_dir+"/netlist_ocn")
+    copy_tree("./netlist_ocn", f"{abs_process_dir}/netlist_ocn")   
     netlist = os.path.join(abs_process_dir,"netlist_ocn","netlist")
-    results_file = os.path.join(process_dir, "results.txt") 
+    results_file = os.path.join(abs_process_dir, "results.txt") 
 
     # params to include in .ocn file
     params["netlist"] = netlist                      # path to the complete netlist file 
@@ -73,8 +76,8 @@ def run_simulation(params):
         network_generator = NetworkGenerator(netlist, num_input, num_output, num_cells, n_spik_vec)
         network_generator.generate_netlist_file()    # the comlete netlist file is created 
         
-        updated_template_file = os.path.join(process_dir, f"updated_template.ocn")
-        log_file = os.path.join(process_dir, f"oceanScript.log") 
+        updated_template_file = os.path.join(abs_process_dir, f"updated_template.ocn")
+        log_file = os.path.join(abs_process_dir, f"oceanScript.log") 
         run_main.subs_template_file("./mp_oceanScript.ocn", updated_template_file, params)
         run_main.run_command(f"ocean -nograph < {updated_template_file} > {log_file}") 
 
@@ -88,12 +91,12 @@ def run_simulation(params):
 #        else:
 #            print(f"skipped : data length not compatible in iteration {i}")
 
-    with open( process_dir+'/sliced_array.txt', 'a') as outfile:
+    with open( abs_process_dir+'/sliced_array.txt', 'a') as outfile:
         result  = np.hstack(( np.array(len(avg_data) * [list(params.values())[:8]]) , avg_data ))
         outfile.write(f"#{str(list(params.items())[:8])}\n")
         np.savetxt(outfile, result, fmt='%.3e')
         prss_t = datetime.timedelta(seconds=tm.time()-tic)
-        outfile.write(f"\n # --- The {process_dir} finished after {prss_t} - at {datetime.datetime.now()} ---\n")
+        outfile.write(f"\n # --- The {abs_process_dir} finished after {prss_t} - at {datetime.datetime.now()} ---\n")
 '''
 
 def main():

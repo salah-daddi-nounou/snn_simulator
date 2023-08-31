@@ -1,0 +1,204 @@
+ahdlcmicompile: Compiling ahdlcmi in input.ahdlSimDB//1deef1a6104544e3217e01bc92ebbb24.Model.ahdlcmi/Linux-64/ for Linux-64 with optimize using gcc on Wed May 31 19:31:33 CEST 2023 [5.0]
+ahdlcmicompile: Generating makefile
+PATH:  /softslin/cdsmmsim16_10_673/bin:/softslin/cdsmmsim16_10_673/tools/bin/64bit:/softslin/cdsmmsim16_10_673/tools/bin:/softslin/cdsic617_719/bin:/softslin/cdsic617_719/tools/bin:/softslin/cdsic617_719/tools.lnx86/bin/64bit:/softslin/cdsic617_719/tools.lnx86/bin:/softslin/cdsic617_719/share/oa/bin:/dk/dk01/cmos28fdsoi_12/PDK_STM_cmos28FDSOI_RF_mmW_6U1x_2T8x_LB/1.2-14/bin:/dk/dk01/cmos28fdsoi_12/UnicadKernel/5.1.b-00/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/home/users/daddinos/miniconda3/bin:/softslin/ams17_1_1/bin:/softslin/cdsic617_719/tools/dfII/bin:/softslin/cdsext17_10_000/tools/bin:/softslin/cdsext17_10_000/bin:/softslin/cdspvs16_12_000/tools/bin:/softslin/cdspvs16_12_000/bin:/softslin/calibre2018_2_24_18/ixl_cal_2018.2_24.18/bin:/softslin/starrcxt_vK2015_12/linux64_starrc/bin
+LD_LIBRARY_PATH:  /softslin/cdsmmsim16_10_673/tools/giganta/lib/64bit:/softslin/cdsmmsim16_10_673/tools/mdl/lib/64bit:/softslin/cdsmmsim16_10_673/tools/mmsim/lib/64bit:/softslin/cdsmmsim16_10_673/tools/tcltk-8.4.20/lib/64bit:/softslin/cdsmmsim16_10_673/tools/inca/lib/64bit:/softslin/cdsmmsim16_10_673/tools/spectre/lib/64bit:/softslin/cdsmmsim16_10_673/tools/dfII/lib/64bit:/softslin/cdsmmsim16_10_673/tools/lib/64bit:/softslin/cdsmmsim16_10_673/tools/lib:/softslin/cdsic617_719/tools/lib:/softslin/cdsic617_719/share/oa/lib/linux_rhel50_gcc48x_64/opt:/softslin/cdsic617_719/tools.lnx86/Qt/64bit/lib:/softslin/cdsic617_719/tools.lnx86/dfII/lib/64bit:/softslin/cdsic617_719/tools.lnx86/sev/lib/64bit:/softslin/cdsic617_719/tools.lnx86/lib/64bit:/softslin/cdsic617_719/tools.lnx86/lib:/softslin/cdsic617_719/tools.lnx86/hdf5/lib/64bit:/softslin/cdsic617_719/tools.lnx86/lz4/lib/64bit:/softslin/cdsic617_719/tools.lnx86/inca/lib/64bit:/softslin/starrcxt_vK2015_12/linux64_starrc/lib
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/bin/gnumake -j24 -f GNUmakefile
+Cleaning ./obj/optimize/5.0
+rm -f -rf ./obj/optimize/5.0
+Compiling C file Model_func.c (optimize)
+Compiling C file Model_DcFuncLoad.c (optimize)
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/bin/64bit/ahdlcc 0 /softslin/cdsmmsim16_10_673/tools.lnx86/cdsgcc/gcc/4.8/bin/gcc  -march=k8 -ffast-math  -fno-unsafe-math-optimizations -O3 -m64 -DSYSV -DSVR4 -D_REENTRANT -fPIC   -DconfigSPECTRE -I. -I/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include -c Model_func.c -o obj/optimize/5.0/Model_func.o || rm -f -f obj/optimize/5.0/Model_func.o
+Compiling C file Model_TranFuncDerLoad.c (optimize)
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/bin/64bit/ahdlcc 0 /softslin/cdsmmsim16_10_673/tools.lnx86/cdsgcc/gcc/4.8/bin/gcc  -march=k8 -ffast-math  -fno-unsafe-math-optimizations -O3 -m64 -DSYSV -DSVR4 -D_REENTRANT -fPIC   -DconfigSPECTRE -I. -I/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include -c Model_DcFuncLoad.c -o obj/optimize/5.0/Model_DcFuncLoad.o || rm -f -f obj/optimize/5.0/Model_DcFuncLoad.o
+Compiling C file Model_DcFuncDerLoad.c (optimize)
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/bin/64bit/ahdlcc 0 /softslin/cdsmmsim16_10_673/tools.lnx86/cdsgcc/gcc/4.8/bin/gcc  -march=k8 -ffast-math  -fno-unsafe-math-optimizations -O3 -m64 -DSYSV -DSVR4 -D_REENTRANT -fPIC   -DconfigSPECTRE -I. -I/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include -c Model_TranFuncDerLoad.c -o obj/optimize/5.0/Model_TranFuncDerLoad.o || rm -f -f obj/optimize/5.0/Model_TranFuncDerLoad.o
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/bin/64bit/ahdlcc 0 /softslin/cdsmmsim16_10_673/tools.lnx86/cdsgcc/gcc/4.8/bin/gcc  -march=k8 -ffast-math  -fno-unsafe-math-optimizations -O3 -m64 -DSYSV -DSVR4 -D_REENTRANT -fPIC   -DconfigSPECTRE -I. -I/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include -c Model_DcFuncDerLoad.c -o obj/optimize/5.0/Model_DcFuncDerLoad.o || rm -f -f obj/optimize/5.0/Model_DcFuncDerLoad.o
+Compiling C file Model_TranFuncLoad.c (optimize)
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/bin/64bit/ahdlcc 0 /softslin/cdsmmsim16_10_673/tools.lnx86/cdsgcc/gcc/4.8/bin/gcc  -march=k8 -ffast-math  -fno-unsafe-math-optimizations -O3 -m64 -DSYSV -DSVR4 -D_REENTRANT -fPIC   -DconfigSPECTRE -I. -I/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include -c Model_TranFuncLoad.c -o obj/optimize/5.0/Model_TranFuncLoad.o || rm -f -f obj/optimize/5.0/Model_TranFuncLoad.o
+Compiling C file Model_cmi_c.c (optimize)
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/bin/64bit/ahdlcc 0 /softslin/cdsmmsim16_10_673/tools.lnx86/cdsgcc/gcc/4.8/bin/gcc  -march=k8 -ffast-math  -fno-unsafe-math-optimizations -O3 -m64 -DSYSV -DSVR4 -D_REENTRANT -fPIC   -DconfigSPECTRE -I. -I/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include -I/softslin/cdsmmsim16_10_673/tools.lnx86/cmi/include -c Model_cmi_c.c -o obj/optimize/5.0/Model_cmi_c.o || rm -f -f obj/optimize/5.0/Model_cmi_c.o
+<stdin>: In function 'Model_DcFuncDerLoad':
+<stdin>:729:40: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+<stdin>: In function 'Model_TranFuncDerLoad':
+<stdin>:765:40: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+<stdin>:730:40: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+<stdin>:766:40: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+<stdin>:745:4: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+<stdin>:781:4: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+<stdin>:752:4: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+<stdin>:788:4: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+<stdin>:753:40: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+<stdin>:789:40: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+<stdin>:765:4: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+<stdin>:801:4: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+<stdin>:782:4: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+<stdin>:818:4: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+<stdin>:789:4: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+<stdin>:825:4: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+<stdin>:790:40: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+<stdin>:826:40: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+<stdin>: In function 'Model_DcFuncLoad':
+<stdin>:637:4: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+<stdin>: In function 'Model_TranFuncLoad':
+<stdin>:671:4: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+<stdin>:654:4: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+<stdin>:688:4: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+<stdin>:671:4: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+<stdin>:705:4: warning: passing argument 1 of 'aslDevInterAddStaticElement' makes pointer from integer without a cast [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1989:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern long aslDevInterAddStaticElement( void *, double, struct ahdlFuncModeParam * );
+                                     ^
+<stdin>: In function 'Model_InitAll':
+<stdin>:1544:2: warning: floating constant exceeds range of 'double' [-Woverflow]
+<stdin>:1545:2: warning: floating constant exceeds range of 'double' [-Woverflow]
+<stdin>:1547:2: warning: floating constant exceeds range of 'double' [-Woverflow]
+<stdin>:1548:2: warning: floating constant exceeds range of 'double' [-Woverflow]
+<stdin>: In function 'Model_pDC_Load':
+<stdin>:2329:958: warning: passing argument 1 of 'aslDevFillZeorDiagonalElemet' makes pointer from integer without a cast [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:2513:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern void aslDevFillZeorDiagonalElemet( void *, int, unsigned int, struct ahdlFuncModeParam * );
+                                     ^
+<stdin>: In function 'Model_pCompare':
+<stdin>:2383:3027: warning: assignment makes integer from pointer without a cast [enabled by default]
+<stdin>:2383:899: warning: passing argument 1 of 'memcpy' makes pointer from integer without a cast [enabled by default]
+In file included from /softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlPiCmi.h:5:0,
+                 from /softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:83,
+                 from <stdin>:24:
+/usr/include/string.h:44:14: note: expected 'void * __restrict__' but argument is of type 'long int'
+ extern void *memcpy (void *__restrict __dest,
+              ^
+<stdin>:2383:899: warning: passing argument 2 of 'memcpy' makes pointer from integer without a cast [enabled by default]
+In file included from /softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlPiCmi.h:5:0,
+                 from /softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:83,
+                 from <stdin>:24:
+/usr/include/string.h:44:14: note: expected 'const void * __restrict__' but argument is of type 'long int'
+ extern void *memcpy (void *__restrict __dest,
+              ^
+<stdin>:2383:3274: warning: assignment makes integer from pointer without a cast [enabled by default]
+<stdin>: In function 'Model_pGetMatrixPointers':
+<stdin>:2389:2371: warning: assignment makes integer from pointer without a cast [enabled by default]
+<stdin>:2389:2515: warning: assignment makes integer from pointer without a cast [enabled by default]
+<stdin>: In function 'Model_pAnalTranLoad':
+<stdin>:2436:1875: warning: passing argument 1 of 'aslDevFillZeorDiagonalElemet' makes pointer from integer without a cast [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:2513:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern void aslDevFillZeorDiagonalElemet( void *, int, unsigned int, struct ahdlFuncModeParam * );
+                                     ^
+<stdin>:2437:4: warning: passing argument 1 of 'aslDevFillZeroDiagQuartet' makes pointer from integer without a cast [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:2515:37: note: expected 'void *' but argument is of type 'long int'
+     ASL_FUNC_DECL_START extern void aslDevFillZeroDiagQuartet( void *, int, unsigned int, struct ahdlFuncModeParam * );
+                                     ^
+<stdin>: In function 'Model_pSaveRestart':
+<stdin>:2463:518: warning: passing argument 2 of 'aslDevAvarSR' from incompatible pointer type [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1213:43: note: expected 'struct ahdlAnalogVar *' but argument is of type 'char *'
+     ASL_FUNC_DECL_START extern PklError_e aslDevAvarSR( int, struct ahdlAnalogVar *, char *, char *, char *, PklJar_t * );
+                                           ^
+<stdin>: In function 'Model_pSaveRestartInst':
+<stdin>:2466:520: warning: passing argument 2 of 'aslDevAvarSR' from incompatible pointer type [enabled by default]
+In file included from <stdin>:24:0:
+/softslin/cdsmmsim16_10_673/tools.lnx86/spectre/ahdlcmi/include/ahdlDevLibGlobal.h:1213:43: note: expected 'struct ahdlAnalogVar *' but argument is of type 'char *'
+     ASL_FUNC_DECL_START extern PklError_e aslDevAvarSR( int, struct ahdlAnalogVar *, char *, char *, char *, PklJar_t * );
+                                           ^
+rm -f -rf Model_DcFuncDerLoad.c
+rm -f -rf Model_TranFuncDerLoad.c
+rm -f -rf Model_DcFuncLoad.c
+rm -f -rf Model_TranFuncLoad.c
+rm -f -rf Model_func.c
+rm -f -rf Model_cmi_c.c
+/softslin/cdsmmsim16_10_673/tools.lnx86/cdsgcc/gcc/4.8/bin/gcc -shared -O3 -m64 -fPIC -o obj/optimize/5.0/libahdlcmi_Model.so ./obj/optimize/5.0/Model_func.o ./obj/optimize/5.0/Model_DcFuncDerLoad.o ./obj/optimize/5.0/Model_DcFuncLoad.o ./obj/optimize/5.0/Model_TranFuncDerLoad.o ./obj/optimize/5.0/Model_TranFuncLoad.o ./obj/optimize/5.0/Model_cmi_c.o  -Wl,-rpath,/usr/lib -Wl,-rpath,/lib -s 

@@ -1,3 +1,5 @@
+import random
+
 class Synapse:
     """
     A class to specify a netlist bloc that describes an MTJ-based synapse of the SNN, 

@@ -1,6 +1,6 @@
 simulator( 'spectre )
-;design(	    "/home/users/daddinos/projet_cmos28fdsoi_12/full_SNN/netlist_ocn/netlist")
-;resultsDir( "/home/users/daddinos/projet_cmos28fdsoi_12/full_SNN/results_ocn" )
+;design(	    "/home/users/daddinos/projet_cmos28fdsoi_12/snn_simulator/src/netlist_ocn/netlist")
+;resultsDir( "/home/users/daddinos/projet_cmos28fdsoi_12/snn_simulator/src/results_ocn" )
 
 design( "${netlist}") 
 resultsDir( "${process_dir}" )

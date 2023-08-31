@@ -8,4 +8,3 @@ Finally `Separotor` is a class to add a separation between a group of similar co
 
 ::: src.net_generator
 
-
