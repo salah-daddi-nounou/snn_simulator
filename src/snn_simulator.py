@@ -21,12 +21,12 @@ num_input = 25
 num_output = 1
 num_cells = 6
 
-sim_time = 1e-3#600e-3                                   # (s) duration of simulation & input presentaion
-spike_duration = 60e-3                              # (s) duration of input spikes
-mem_vth = 50e-3                                     # (V) output membrane potential threshold 
+sim_time = 150e-3                                   # (s) duration of simulation & input presentaion
+spike_duration = 10e-3                              # (s) duration of input spikes
+mem_vth = 12e-3                                     # (V) output membrane potential threshold 
 
 # input coding : n_spikes = base + max (pixel/255)
-cod_base = 3; cod_max = 2
+cod_base = 3; cod_max = 4
 
 # create a string that contians result signals, to inserct in .ocn file 
 save_states = "" 

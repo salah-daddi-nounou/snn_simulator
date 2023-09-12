@@ -145,7 +145,7 @@ class Netlist:
     A class which assemles the instances of all the components, it then generates the netlist file
     add_component is a method that appends the instances of the componenets in one list called components.
     generate_netlist_file is a method that generates the diffrent parts of the netlist by using the generate_netlist_bloc()
-    which is comment to all the components classes. 
+    which is commun to all the components classes. 
     
     Attributes:
         file_path [str]: The path to the file where the netlist will be written.
