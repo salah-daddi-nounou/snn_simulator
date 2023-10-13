@@ -1,4 +1,0 @@
-parameters delay2=1.2e-07 delay1=1.2e-07 V_pre_end=-0.09 V_pre=0.15 \
-    V_post_min=-0.1 V_post_max=0.1 W_post_min=7e-06 W_post_max=1e-06 \
-    W_pre=0.06 slope=0 seed4=7382 seed3=2348 seed2=4819 seed1=8683 PAP0=0 \
-    PAP1=1 gl_Temp_var=0 gl_T=300 gl_RV=0 gl_STO=1

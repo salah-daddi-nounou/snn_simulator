@@ -46,7 +46,7 @@ selectResults('tran)
 outputs()           ; prints all signal names
 
 ocnPrint(?output "${results_file}" 
-                 ${save_states} v("output_neuron1:membrane") v("output_neuron2:membrane") ?step 100u  
+                 ${save_states} v("output_neuron1:membrane") v("output_neuron2:membrane") ?step 1u ;100u 
                  ;1e6 * value( i("pre:p") / (v("top") - v("down")) , 
                  ;value( v("synapse1_1.cell1.I:ix")+ v("synapse1_1.cell2.I:ix") , 
                  ;2*(${W_post_min}+${W_post_max})+${W_pre}+1u) 
