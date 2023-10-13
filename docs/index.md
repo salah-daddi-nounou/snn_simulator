@@ -13,5 +13,6 @@ Along with these necessary device descriptions, a netlist that describes the ful
 Once the netlist has been generated, the simulation is lanched automatically in `Spectre`. It inputs the image pixels to the netowrk, the input neurons spike according to a given coding and signal is fed forward in form of current that allwos the network to learn the paterns using the Spike Timing Dependent Plasticity STDP rule which is specific to SNNs. The framework tracks the history of each synapse and neuron in the network. It finally allows diffrent ploting and visualisation fonctionalities. 
 
 The following diagram summurises every file involved in the simulaiton of SNN online training and it output visualisation, and how they interact in an automatic way. 
+(this is a small test)
 
 ![framwork_scheme](./img/framwork_scheme.png)
