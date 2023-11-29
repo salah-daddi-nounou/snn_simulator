@@ -2,7 +2,7 @@ simulator( 'spectre )
 design( "${netlist}") 
 resultsDir( "${process_dir}" )
 
-analysis('tran ?start "0" ?stop "${sim_time}"    ;"2*(${W_post_min}+${W_post_max})+${W_pre}+2u" 
+analysis('tran ?start "0" ?stop "${sim_time}"     
         ?step "100n" ?maxstep "100n"  ?minstep "100n" ?write ""  ?writefinal "" ?oppoint "no" ?finalTimeOp nil )
 
 envOption(   'userCmdLineOption "-log ++aps +postlayout" 'restart  "N" 'savestate  "N" 'autoDisplay  nil )
@@ -13,32 +13,22 @@ saveOption(  ?infoOptions list(list("modelParameter" "models" "rawfile" "" "" ""
                           list("asserts" "assert" "rawfile" "" "" "" nil)               list("extremeinfo" "all" "logfile" "" "" "" nil) ) 
                           ?simOutputFormat "" ?saveahdlvars "selected" ?save "none" ?currents "none"  )
 
+;saveOption( 'pwr "devices" )
+
 desVar(	  "gl_STO"       1        	    )
 desVar(	  "gl_RV"        0 	            )
 desVar(	  "gl_T"         300	        )
 desVar(	  "gl_Temp_var"  0              )
 
-desVar(	  "slope"        0	            )
-desVar(	  "W_pre" 	     ${W_pre}       )
-desVar(	  "W_post_max"   ${W_post_max}	)
-desVar(	  "W_post_min" 	 ${W_post_min}  )
-desVar(	  "V_post_max" 	 ${V_post_max}  )
-desVar(	  "V_post_min" 	 ${V_post_min}  )
-desVar(	  "V_pre" 	     ${V_pre} 	    )
-desVar(	  "V_pre_end"    ${V_pre_end}   )
 desVar(	  "sim_time"     ${sim_time}    )
 desVar(	  "spike_duration" ${spike_duration}    )
 desVar(	  "mem_vth" ${mem_vth}    )
-;desVar(	  "delay1"       ${W_post_min}+${W_post_max}  )
-;desVar(	  "delay2"       1n	        )
 
-;paramAnalysis("delay2" ?values '(2m 5m))
-;paramAnalysis("delay2" ?start 0 ?stop ${W_post_min}+${W_post_max}+${W_pre} 
-;                       ?step (${W_post_min}+${W_post_max}+${W_pre}))
-
-save('v "synapse*.cell*.I:ix") ; save the states ix of all the MTJs 
-save('v "output_neuron*:membrane")
-
+save('currents "all")
+save('v "all")
+save('all )
+;save('v "synapse*.cell*.I:ix") ; save the states ix of all the MTJs 
+;save('v "output_neuron*:membrane")
 
 ;paramRun()  ;monteRun()   ;run()
 run()
@@ -46,10 +36,7 @@ selectResults('tran)
 outputs()           ; prints all signal names
 
 ocnPrint(?output "${results_file}" 
-                 ${save_states} v("output_neuron1:membrane") v("output_neuron2:membrane") ?step 1u ;100u 
-                 ;1e6 * value( i("pre:p") / (v("top") - v("down")) , 
-                 ;value( v("synapse1_1.cell1.I:ix")+ v("synapse1_1.cell2.I:ix") , 
-                 ;2*(${W_post_min}+${W_post_max})+${W_pre}+1u) 
+                 ${save_states} v("output_neuron1:membrane") v("output_neuron2:membrane") ?step 1m 
                  ;v("synapse1_1.cell1.I:ix") v("synapse1_1.cell2.I:ix")
                  ?numSpaces 1 ?width 1 ?precision 5 ?numberNotation 'none  ) 
 

@@ -11,7 +11,7 @@ module Input_neuron(terminal1, terminal2);
   parameter real spike_duration = 60e-3 ;   // Maximum duration of a single spike
   parameter real presenting_time = 300e-3;  // The total time a pixel is presented to the network
   real slope = -(150-(-90))*1e-3/spike_duration; // slpe of input spike
-  real t_window = presenting_time/n_spikes; 
+  real t_window = presenting_time/n_spikes; // window includes presentime_time + itme between two spikes 
   real t_;
   real t0, spiking;
 

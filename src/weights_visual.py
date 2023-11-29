@@ -13,10 +13,12 @@ data = np.genfromtxt(f"{folder_name}/results.txt", delimiter="", skip_header=4)
 #                    time | synapse1 | synapse2 | ... | membrane_out_neuron
 
 init_weights_flat = data[0, 1:-1]
-init_weights_img = init_weights_flat.reshape((5, 5))
+#init_weights_flat = data[-1, 1:26]
+init_weights_img = init_weights_flat.reshape((5,5))
 
 final_weights_flat = data[-1, 1:-1]
-final_weights_img = final_weights_flat.reshape((5, 5))
+#final_weights_flat = data[-1, 26:51]
+final_weights_img = final_weights_flat.reshape((5,5))
 
 # Plot the weights history
 fig, (axe1, axe2) = plt.subplots(2, 1, figsize=(5, 10))

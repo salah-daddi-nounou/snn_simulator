@@ -123,7 +123,7 @@ class Output_neuron:
         self.output_index = output_index 
 
     def generate_netlist_bloc(self):
-        template = ( "output_neuron{} (output{}) LIF_verilog_extcap mem_vth=mem_vth\n" )
+        template = ( "output_neuron{} (output{}) LIF_neuron mem_vth=mem_vth\n" )
         
         return template.format(self.output_index, self.output_index)
 
