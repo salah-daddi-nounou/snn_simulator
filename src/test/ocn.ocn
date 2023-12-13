@@ -1,8 +1,8 @@
 simulator( 'spectre )
-design( "${netlist}") 
-resultsDir( "${process_dir}" )
+design( "/home/users/daddinos/projet_cmos28fdsoi_12/snn_simulator/src/test/netlist_ocn/netlist") 
+resultsDir( "/home/users/daddinos/projet_cmos28fdsoi_12/snn_simulator/src/test/results" )
 
-analysis('tran ?start "0" ?stop "${sim_time}"     
+analysis('tran ?start "0" ?stop "5u"     
         ?step "100n" ?maxstep "100n"  ?minstep "100n" ?write ""  ?writefinal "" ?oppoint "no" ?finalTimeOp nil )
 
 envOption(   'userCmdLineOption "-log ++aps +postlayout" 'restart  "N" 'savestate  "N" 'autoDisplay  nil )
@@ -20,26 +20,26 @@ desVar(	  "gl_RV"        0 	            ) ;2
 desVar(	  "gl_T"         300	        )
 desVar(	  "gl_Temp_var"  0              )
 
-desVar(	  "RV_dev"     ${dev}    )
-desVar(	  "sim_time"     ${sim_time}    )
-desVar(	  "spike_duration" ${spike_duration}    )
-desVar(	  "mem_vth" ${mem_vth}    )
+desVar(	  "RV_dev"     0    )
+desVar(	  "sim_time"     150m    )
+desVar(	  "spike_duration" 10m    )
+desVar(	  "mem_vth" 12m    )
 
 ;save('currents "all")
-;save('v "all")
-;save('all )
+save('v "all")
+save('all )
 save('v "synapse*.cell*.I:ix") ; save the states ix of all the MTJs 
-save('v "output_neuron*:membrane")
+;save('v "output_neuron*:membrane")
 
 ;paramRun()  ;monteRun()   ;run()
 run()
 selectResults('tran)
 outputs()           ; prints all signal names
 
-ocnPrint(?output "${results_file}" 
-                 ${save_states} v("output_neuron1:membrane") ?step 1m 
-                 ;v("synapse1_1.cell1.I:ix") v("synapse1_1.cell2.I:ix") v("input1") v("output1")
-                 ?numSpaces 1 ?width 1 ?precision 5 ?numberNotation 'none  ) 
+ocnPrint(?output "/home/users/daddinos/projet_cmos28fdsoi_12/snn_simulator/src/test/results_file" 
+                 ;${save_states} v("output_neuron1:membrane") ?step 1m 
+                 v("synapse1_1.cell1.I:ix") v("input1") v("output1")
+                 ?numSpaces 10 ?width 10 ?precision 5 ?numberNotation 'none  ) 
 
 exit()
 

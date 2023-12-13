@@ -1,0 +1,1060 @@
+simulate...
+
+Spectre (R) Circuit Simulator
+Version 16.1.0.673.isr14 64bit -- 30 Mar 2018
+
+Copyright (C) 1989-2018 Cadence Design Systems, Inc. All rights reserved
+        worldwide. Cadence and Spectre are registered trademarks of Cadence
+        Design Systems, Inc. All others are the property of their respective
+        holders.
+
+Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA
+        Security, Inc.
+
+
+User: daddinos   Host: timald03   HostID: AB930422   PID: 29017
+
+Memory  available: 187.3673 GB  physical: 203.0692 GB
+
+Linux   : Red Hat Enterprise Linux Server release 6.10 (Santiago)
+CPU Type: Intel(R) Xeon(R) CPU E5-2630 0 @ 2.30GHz
+All processors running at 2300.0 MHz
+        Socket: Processors (Hyperthreaded Processor)
+        0:       0 ( 12 ),  2 ( 14 ),  4 ( 16 ),  6 ( 18 ),  8 ( 20 )
+                10 ( 22 )
+        1:       1 ( 13 ),  3 ( 15 ),  5 ( 17 ),  7 ( 19 ),  9 ( 21 )
+                11 ( 23 )
+        
+System load averages (1min, 5min, 15min) : 13.8 %, 13.5 %, 13.4 %
+Hyperthreading is enabled
+HPC is enabled
+
+
+
+
+Simulating `input.scs' on timald03 at 7:31:32 PM, Wed May 31, 2023 (process id:
+        29017).
+
+Current working directory:
+        /home/users/daddinos/projet_cmos28fdsoi_12/snn_simulator/src/netlist_ocn
+
+Reading file: 
+        /home/users/daddinos/projet_cmos28fdsoi_12/snn_simulator/src/netlist_ocn/input.scs
+
+Reading link:  /softslin/cdsmmsim16_10_673
+Reading file: 
+        /softl1/cdsmmsim16_10_673/tools.lnx86/spectre/etc/configs/mapsubckt.cfg
+
+Reading file: 
+        /softl1/cdsmmsim16_10_673/tools.lnx86/spectre/etc/configs/spectre.cfg
+
+Reading file: 
+        /home/users/daddinos/projet_cmos28fdsoi_12/snn_simulator/src/wang_model.va
+
+Reading file: 
+        /softl1/cdsmmsim16_10_673/tools.lnx86/spectre/etc/ahdl/constants.vams
+
+Reading file: 
+        /softl1/cdsmmsim16_10_673/tools.lnx86/spectre/etc/ahdl/disciplines.vams
+
+Time for NDB Parsing: CPU = 289.956 ms, elapsed = 736.578 ms.
+
+Time accumulated: CPU = 380.942 ms, elapsed = 736.586 ms.
+Peak resident memory used = 54.1 Mbytes.
+
+
+
+
+Warning from spectre.
+    WARNING (SFE-3263): +postlayout will filter out the parasitic nodes by
+        default, use savefilter=none if you need to see them.
+
+
+Compiling ahdlcmi module library.
+
+Finished compilation in 2.1 s (elapsed) for Model.
+
+Installed compiled interface for Model.
+
+Reading link: 
+        /softslin/cdsmmsim16_10_673/tools.lnx86/spectre/etc/ahdl/discipline.h
+
+Reading link: 
+        /softslin/cdsmmsim16_10_673/tools.lnx86/spectre/etc/ahdl/constants.h
+
+Time for Elaboration: CPU = 218.966 ms, elapsed = 2.26414 s.
+
+Time accumulated: CPU = 599.908 ms, elapsed = 3.00087 s.
+Peak resident memory used = 71.2 Mbytes.
+
+
+
+
+Time for EDB Visiting: CPU = 2 ms, elapsed = 1.5769 ms.
+
+Time accumulated: CPU = 601.908 ms, elapsed = 3.00259 s.
+Peak resident memory used = 71.8 Mbytes.
+
+
+
+
+Notice from spectre during initial setup.
+    Multithreading is disabled due to the size of the design being too small.
+
+
+Global user options:
+
+             reltol = 0.001
+
+            vabstol = 1e-06
+            iabstol = 1e-12
+
+               temp = 27
+        multithread = on
+
+               gmin = 1e-12
+             rforce = 1
+
+           maxnotes = 5
+           maxwarns = 5
+
+             digits = 5
+
+               cols = 80
+
+             pivrel = 0.001
+
+               save = allpub
+
+               tnom = 27
+
+             scalem = 1
+
+              scale = 1
+
+
+Scoped user options:
+
+
+Circuit inventory:
+
+              nodes 5
+
+              Model 1     
+
+           resistor 3     
+
+            vsource 2     
+
+
+Analysis and control statement inventory:
+
+               tran 1     
+
+
+Output statements:
+
+             .probe 0     
+
+           .measure 0     
+
+               save 1     
+
+
+
+
+
+Notice from spectre during initial setup.
+
+    0 resistors are shorted because of `rabsshort'
+
+    Fast APS Enabled ( rcopt=3 ).
+
+
+
+Time for parsing: CPU = 2.999 ms, elapsed = 2.88105 ms.
+
+Time accumulated: CPU = 604.907 ms, elapsed = 3.00557 s.
+
+Peak resident memory used = 73 Mbytes.
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~
+Pre-Simulation Summary
+~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+**************************************************
+
+Transient Analysis `tran': time = (1 ns -> 1.3 us)
+**************************************************
+
+Trying Fast DC 0 for initial conditions..
+
+DC simulation time: CPU = 1 ms, elapsed = 906.944 us.
+
+
+Opening the PSF file ../results_ocn/delay2=0/psf/tran.tran.tran ...
+
+Important parameter values:
+
+    start = 1 ns
+
+    outputstart = 1 ns
+
+    stop = 1.3 us
+
+    step = 3 ns
+
+    maxstep = 3 ns
+
+    minstep = 3 ns
+
+    ic = all
+
+    useprevic = no
+
+    skipdc = no
+
+    reltol = 1e-03
+
+    abstol(V) = 1 uV
+
+    abstol(I) = 1 pA
+
+    temp = 27 C
+
+    tnom = 27 C
+
+    tempeffects = all
+
+    errpreset = moderate
+
+    method = traponly
+
+    lteratio = 3.5
+
+    relref = sigglobal
+
+    cmin = 0 F
+    gmin = 1 pS
+
+    rabsshort = 1 mOhm
+
+
+
+
+Notice from spectre during transient analysis `tran'.
+    Multithreading is disabled due to the size of the design being too small.
+
+
+
+
+Output and IC/nodeset summary:
+
+                 save   2       (current)
+
+                 save   7       (voltage)
+
+
+
+    tran: time = 34 ns       (2.54 %), step = 3 ns         (231 m%)
+
+    tran: time = 100 ns      (7.62 %), step = 3 ns         (231 m%)
+
+    tran: time = 166 ns      (12.7 %), step = 3 ns         (231 m%)
+
+    tran: time = 229 ns      (17.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 295 ns      (22.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 361 ns      (27.7 %), step = 3 ns         (231 m%)
+
+    tran: time = 424 ns      (32.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 490 ns      (37.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 556 ns      (42.7 %), step = 3 ns         (231 m%)
+
+    tran: time = 619 ns      (47.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 685 ns      (52.7 %), step = 3 ns         (231 m%)
+
+    tran: time = 748 ns      (57.5 %), step = 3 ns         (231 m%)
+
+    tran: time = 814 ns      (62.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 880 ns      (67.7 %), step = 3 ns         (231 m%)
+
+    tran: time = 943 ns      (72.5 %), step = 3 ns         (231 m%)
+
+    tran: time = 1.009 us    (77.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 1.075 us    (82.7 %), step = 3 ns         (231 m%)
+
+    tran: time = 1.138 us    (87.5 %), step = 3 ns         (231 m%)
+
+    tran: time = 1.204 us    (92.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 1.27 us     (97.7 %), step = 3 ns         (231 m%)
+
+Number of accepted tran steps =             433
+
+
+Maximum value achieved for any signal of each quantity: 
+
+V: V(cell1.net1) = 10.4 kV
+
+I: I(cell1.I:Rreal_flow) = 10.4 kA
+
+If your circuit contains signals of the same quantity that are vastly different
+        in size (such as high voltage circuitry combined with low voltage
+
+        control circuitry), you should consider specifying global option
+        `bin_relref=yes'.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Post-Transient Simulation Summary
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   -   Non-default settings that could significantly slow down simulation
+
+          maxstep = 3 ns, default 26 ns
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+During simulation, the CPU load for active processors is :
+        Spectre  1 (46.0 %)      3 (46.2 %)      5 (24.7 %)      7 (6.2 %)
+
+                 9 (22.3 %)     11 (6.9 %)      13 (23.4 %)     15 (24.1 %)
+                17 (11.0 %)     19 (100.0 %)    21 (29.7 %)     23 (36.9 %)
+        Other    0 (93.1 %)      2 (5.8 %)      12 (1.0 %)      16 (100.0 %)
+                18 (2.9 %)      
+
+Initial condition solution time: CPU = 1 ms, elapsed = 953.197 us.
+
+Intrinsic tran analysis time:    CPU = 24.997 ms, elapsed = 24.719 ms.
+
+Total time required for tran analysis `tran': CPU = 26.996 ms, elapsed = 27.112
+        ms.
+
+Time accumulated: CPU = 636.903 ms, elapsed = 3.03743 s.
+
+Peak resident memory used = 74.7 Mbytes.
+
+
+
+Aggregate audit (7:31:35 PM, Wed May 31, 2023):
+
+Time used: CPU = 639 ms, elapsed = 3.04 s, util. = 21%.
+
+Time spent in licensing: elapsed = 24.8 ms.
+
+Peak memory used = 75.1 Mbytes.
+
+Simulation started at: 7:31:32 PM, Wed May 31, 2023, ended at: 7:31:35 PM, Wed
+        May 31, 2023, with elapsed time (wall clock): 3.04 s.
+
+spectre completes with 0 errors, 1 warning, and 4 notices.
+
+reading simulation data...
+      ...successful.
+simulate...
+
+Spectre (R) Circuit Simulator
+Version 16.1.0.673.isr14 64bit -- 30 Mar 2018
+Copyright (C) 1989-2018 Cadence Design Systems, Inc. All rights reserved
+
+        worldwide. Cadence and Spectre are registered trademarks of Cadence
+        Design Systems, Inc. All others are the property of their respective
+        holders.
+
+Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA
+        Security, Inc.
+
+
+User: daddinos   Host: timald03   HostID: AB930422   PID: 29524
+
+Memory  available: 187.2898 GB  physical: 203.0692 GB
+
+Linux   : Red Hat Enterprise Linux Server release 6.10 (Santiago)
+CPU Type: Intel(R) Xeon(R) CPU E5-2630 0 @ 2.30GHz
+All processors running at 2300.0 MHz
+        Socket: Processors (Hyperthreaded Processor)
+        0:       0 ( 12 ),  2 ( 14 ),  4 ( 16 ),  6 ( 18 ),  8 ( 20 )
+                10 ( 22 )
+        1:       1 ( 13 ),  3 ( 15 ),  5 ( 17 ),  7 ( 19 ),  9 ( 21 )
+                11 ( 23 )
+        
+System load averages (1min, 5min, 15min) : 15.3 %, 13.9 %, 13.5 %
+Hyperthreading is enabled
+HPC is enabled
+
+
+
+Simulating `input.scs' on timald03 at 7:31:36 PM, Wed May 31, 2023 (process id:
+
+        29524).
+Current working directory:
+        /home/users/daddinos/projet_cmos28fdsoi_12/snn_simulator/src/netlist_ocn
+
+Reading file: 
+        /home/users/daddinos/projet_cmos28fdsoi_12/snn_simulator/src/netlist_ocn/input.scs
+
+Reading link:  /softslin/cdsmmsim16_10_673
+
+Reading file: 
+        /softl1/cdsmmsim16_10_673/tools.lnx86/spectre/etc/configs/mapsubckt.cfg
+
+Reading file: 
+        /softl1/cdsmmsim16_10_673/tools.lnx86/spectre/etc/configs/spectre.cfg
+
+Reading file: 
+        /home/users/daddinos/projet_cmos28fdsoi_12/snn_simulator/src/wang_model.va
+
+Reading file: 
+        /softl1/cdsmmsim16_10_673/tools.lnx86/spectre/etc/ahdl/constants.vams
+
+Reading file: 
+        /softl1/cdsmmsim16_10_673/tools.lnx86/spectre/etc/ahdl/disciplines.vams
+
+Time for NDB Parsing: CPU = 239.965 ms, elapsed = 245.88 ms.
+
+Time accumulated: CPU = 267.959 ms, elapsed = 245.887 ms.
+Peak resident memory used = 52.9 Mbytes.
+
+
+
+
+Warning from spectre.
+    WARNING (SFE-3263): +postlayout will filter out the parasitic nodes by
+
+        default, use savefilter=none if you need to see them.
+
+
+
+Existing shared object for module Model is up to date.
+Installed compiled interface for Model.
+
+Reading link: 
+        /softslin/cdsmmsim16_10_673/tools.lnx86/spectre/etc/ahdl/discipline.h
+
+Reading link: 
+        /softslin/cdsmmsim16_10_673/tools.lnx86/spectre/etc/ahdl/constants.h
+
+Time for Elaboration: CPU = 51.992 ms, elapsed = 26.2001 ms.
+
+Time accumulated: CPU = 320.95 ms, elapsed = 272.256 ms.
+
+Peak resident memory used = 61.3 Mbytes.
+
+
+
+Time for EDB Visiting: CPU = 3 ms, elapsed = 1.45912 ms.
+Time accumulated: CPU = 323.95 ms, elapsed = 273.877 ms.
+Peak resident memory used = 61.9 Mbytes.
+
+
+Notice from spectre during initial setup.
+    Multithreading is disabled due to the size of the design being too small.
+
+Global user options:
+             reltol = 0.001
+            vabstol = 1e-06
+            iabstol = 1e-12
+               temp = 27
+        multithread = on
+               gmin = 1e-12
+             rforce = 1
+           maxnotes = 5
+           maxwarns = 5
+             digits = 5
+               cols = 80
+             pivrel = 0.001
+               save = allpub
+               tnom = 27
+             scalem = 1
+              scale = 1
+
+Scoped user options:
+
+Circuit inventory:
+              nodes 5
+              Model 1     
+           resistor 3     
+            vsource 2     
+
+Analysis and control statement inventory:
+               tran 1     
+
+Output statements:
+             .probe 0     
+           .measure 0     
+               save 1     
+
+
+Notice from spectre during initial setup.
+    0 resistors are shorted because of `rabsshort'
+    Fast APS Enabled ( rcopt=3 ).
+
+
+Time for parsing: CPU = 13.997 ms, elapsed = 11.4541 ms.
+Time accumulated: CPU = 338.947 ms, elapsed = 285.466 ms.
+Peak resident memory used = 63.2 Mbytes.
+
+~~~~~~~~~~~~~~~~~~~~~~
+Pre-Simulation Summary
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+**************************************************
+Transient Analysis `tran': time = (1 ns -> 1.3 us)
+**************************************************
+Trying Fast DC 0 for initial conditions..
+DC simulation time: CPU = 2 ms, elapsed = 991.106 us.
+
+Opening the PSF file ../results_ocn/delay2=6e-08/psf/tran.tran.tran ...
+Important parameter values:
+    start = 1 ns
+    outputstart = 1 ns
+    stop = 1.3 us
+    step = 3 ns
+    maxstep = 3 ns
+    minstep = 3 ns
+    ic = all
+    useprevic = no
+    skipdc = no
+    reltol = 1e-03
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    errpreset = moderate
+    method = traponly
+    lteratio = 3.5
+    relref = sigglobal
+    cmin = 0 F
+    gmin = 1 pS
+    rabsshort = 1 mOhm
+
+
+Notice from spectre during transient analysis `tran'.
+    Multithreading is disabled due to the size of the design being too small.
+
+
+Output and IC/nodeset summary:
+                 save   2       (current)
+                 save   7       (voltage)
+
+
+    tran: time = 34 ns       (2.54 %), step = 3 ns         (231 m%)
+
+    tran: time = 100 ns      (7.62 %), step = 3 ns         (231 m%)
+
+    tran: time = 166 ns      (12.7 %), step = 3 ns         (231 m%)
+
+    tran: time = 229 ns      (17.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 295 ns      (22.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 361 ns      (27.7 %), step = 3 ns         (231 m%)
+
+    tran: time = 424 ns      (32.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 490 ns      (37.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 556 ns      (42.7 %), step = 3 ns         (231 m%)
+
+    tran: time = 619 ns      (47.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 685 ns      (52.7 %), step = 3 ns         (231 m%)
+
+    tran: time = 748 ns      (57.5 %), step = 3 ns         (231 m%)
+
+    tran: time = 814 ns      (62.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 880 ns      (67.7 %), step = 3 ns         (231 m%)
+
+    tran: time = 943 ns      (72.5 %), step = 3 ns         (231 m%)
+
+    tran: time = 1.009 us    (77.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 1.075 us    (82.7 %), step = 3 ns         (231 m%)
+
+    tran: time = 1.138 us    (87.5 %), step = 3 ns         (231 m%)
+
+    tran: time = 1.204 us    (92.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 1.27 us     (97.7 %), step = 3 ns         (231 m%)
+
+Number of accepted tran steps =             433
+
+
+Maximum value achieved for any signal of each quantity: 
+
+V: V(cell1.net1) = 10.57 kV
+
+I: I(cell1.I:Rreal_flow) = 10.57 kA
+
+If your circuit contains signals of the same quantity that are vastly different
+
+        in size (such as high voltage circuitry combined with low voltage
+
+        control circuitry), you should consider specifying global option
+
+        `bin_relref=yes'.
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Post-Transient Simulation Summary
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   -   Non-default settings that could significantly slow down simulation
+
+          maxstep = 3 ns, default 26 ns
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+During simulation, the CPU load for active processors is :
+
+        Spectre  1 (55.0 %)     13 (14.3 %)     19 (100.0 %)    
+        Other    0 (100.0 %)     2 (10.0 %)      6 (23.8 %)      8 (4.8 %)
+
+                14 (9.5 %)      16 (100.0 %)    18 (66.7 %)     
+
+Initial condition solution time: CPU = 2 ms, elapsed = 1.03998 ms.
+
+Intrinsic tran analysis time:    CPU = 56.992 ms, elapsed = 28.6629 ms.
+
+Total time required for tran analysis `tran': CPU = 61.991 ms, elapsed = 31.26
+
+        ms.
+
+Time accumulated: CPU = 412.936 ms, elapsed = 323.335 ms.
+
+Peak resident memory used = 65.2 Mbytes.
+
+
+
+
+Aggregate audit (7:31:36 PM, Wed May 31, 2023):
+
+Time used: CPU = 419 ms, elapsed = 327 ms, util. = 128%.
+
+Time spent in licensing: elapsed = 19.9 ms, percentage of total = 6.1%.
+
+Peak memory used = 65.6 Mbytes.
+
+Simulation started at: 7:31:36 PM, Wed May 31, 2023, ended at: 7:31:36 PM, Wed
+
+        May 31, 2023, with elapsed time (wall clock): 327 ms.
+
+spectre completes with 0 errors, 1 warning, and 4 notices.
+
+reading simulation data...
+      ...successful.
+simulate...
+
+
+Spectre (R) Circuit Simulator
+Version 16.1.0.673.isr14 64bit -- 30 Mar 2018
+Copyright (C) 1989-2018 Cadence Design Systems, Inc. All rights reserved
+        worldwide. Cadence and Spectre are registered trademarks of Cadence
+        Design Systems, Inc. All others are the property of their respective
+        holders.
+
+Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA
+        Security, Inc.
+
+
+User: daddinos   Host: timald03   HostID: AB930422   PID: 29610
+
+Memory  available: 187.2898 GB  physical: 203.0692 GB
+
+Linux   : Red Hat Enterprise Linux Server release 6.10 (Santiago)
+CPU Type: Intel(R) Xeon(R) CPU E5-2630 0 @ 2.30GHz
+All processors running at 2300.0 MHz
+        Socket: Processors (Hyperthreaded Processor)
+
+        0:       0 ( 12 ),  2 ( 14 ),  4 ( 16 ),  6 ( 18 ),  8 ( 20 )
+                10 ( 22 )
+        1:       1 ( 13 ),  3 ( 15 ),  5 ( 17 ),  7 ( 19 ),  9 ( 21 )
+                11 ( 23 )
+        
+System load averages (1min, 5min, 15min) : 15.3 %, 13.9 %, 13.5 %
+Hyperthreading is enabled
+HPC is enabled
+
+
+Simulating `input.scs' on timald03 at 7:31:37 PM, Wed May 31, 2023 (process id:
+        29610).
+Current working directory:
+        /home/users/daddinos/projet_cmos28fdsoi_12/snn_simulator/src/netlist_ocn
+
+Reading file: 
+
+        /home/users/daddinos/projet_cmos28fdsoi_12/snn_simulator/src/netlist_ocn/input.scs
+
+Reading link:  /softslin/cdsmmsim16_10_673
+
+Reading file: 
+        /softl1/cdsmmsim16_10_673/tools.lnx86/spectre/etc/configs/mapsubckt.cfg
+
+Reading file: 
+        /softl1/cdsmmsim16_10_673/tools.lnx86/spectre/etc/configs/spectre.cfg
+
+Reading file: 
+        /home/users/daddinos/projet_cmos28fdsoi_12/snn_simulator/src/wang_model.va
+
+Reading file: 
+        /softl1/cdsmmsim16_10_673/tools.lnx86/spectre/etc/ahdl/constants.vams
+
+Reading file: 
+        /softl1/cdsmmsim16_10_673/tools.lnx86/spectre/etc/ahdl/disciplines.vams
+
+Time for NDB Parsing: CPU = 224.965 ms, elapsed = 238.849 ms.
+
+Time accumulated: CPU = 254.96 ms, elapsed = 238.856 ms.
+Peak resident memory used = 51 Mbytes.
+
+
+
+
+
+Warning from spectre.
+    WARNING (SFE-3263): +postlayout will filter out the parasitic nodes by
+
+        default, use savefilter=none if you need to see them.
+
+
+
+Existing shared object for module Model is up to date.
+Installed compiled interface for Model.
+
+Reading link: 
+
+        /softslin/cdsmmsim16_10_673/tools.lnx86/spectre/etc/ahdl/discipline.h
+
+Reading link: 
+        /softslin/cdsmmsim16_10_673/tools.lnx86/spectre/etc/ahdl/constants.h
+
+Time for Elaboration: CPU = 49.993 ms, elapsed = 25.7051 ms.
+
+Time accumulated: CPU = 305.953 ms, elapsed = 264.752 ms.
+
+Peak resident memory used = 59.3 Mbytes.
+
+
+
+
+
+Time for EDB Visiting: CPU = 3 ms, elapsed = 1.23 ms.
+
+Time accumulated: CPU = 309.952 ms, elapsed = 266.141 ms.
+
+Peak resident memory used = 60 Mbytes.
+
+
+
+
+
+Notice from spectre during initial setup.
+    Multithreading is disabled due to the size of the design being too small.
+
+
+Global user options:
+
+             reltol = 0.001
+
+            vabstol = 1e-06
+
+            iabstol = 1e-12
+
+               temp = 27
+
+        multithread = on
+
+               gmin = 1e-12
+
+             rforce = 1
+
+           maxnotes = 5
+
+           maxwarns = 5
+
+             digits = 5
+
+               cols = 80
+
+             pivrel = 0.001
+
+               save = allpub
+
+               tnom = 27
+
+             scalem = 1
+
+              scale = 1
+
+
+Scoped user options:
+
+
+Circuit inventory:
+
+              nodes 5
+
+              Model 1     
+
+           resistor 3     
+
+            vsource 2     
+
+
+Analysis and control statement inventory:
+
+               tran 1     
+
+
+Output statements:
+
+             .probe 0     
+
+           .measure 0     
+
+               save 1     
+
+
+
+
+
+Notice from spectre during initial setup.
+
+    0 resistors are shorted because of `rabsshort'
+
+    Fast APS Enabled ( rcopt=3 ).
+
+
+
+Time for parsing: CPU = 14.998 ms, elapsed = 11.8189 ms.
+
+Time accumulated: CPU = 324.95 ms, elapsed = 278.083 ms.
+
+Peak resident memory used = 61.2 Mbytes.
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~
+
+Pre-Simulation Summary
+
+~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+**************************************************
+
+Transient Analysis `tran': time = (1 ns -> 1.3 us)
+
+**************************************************
+
+Trying Fast DC 0 for initial conditions..
+
+DC simulation time: CPU = 3.998 ms, elapsed = 1.51515 ms.
+
+
+
+Opening the PSF file ../results_ocn/delay2=1.2e-07/psf/tran.tran.tran ...
+
+Important parameter values:
+
+    start = 1 ns
+
+    outputstart = 1 ns
+
+    stop = 1.3 us
+
+    step = 3 ns
+
+    maxstep = 3 ns
+    minstep = 3 ns
+
+    ic = all
+
+    useprevic = no
+
+    skipdc = no
+
+    reltol = 1e-03
+
+    abstol(V) = 1 uV
+
+    abstol(I) = 1 pA
+
+    temp = 27 C
+
+    tnom = 27 C
+
+    tempeffects = all
+
+    errpreset = moderate
+
+    method = traponly
+
+    lteratio = 3.5
+
+    relref = sigglobal
+
+    cmin = 0 F
+
+    gmin = 1 pS
+
+    rabsshort = 1 mOhm
+
+
+
+
+
+Notice from spectre during transient analysis `tran'.
+
+    Multithreading is disabled due to the size of the design being too small.
+
+
+
+
+Output and IC/nodeset summary:
+
+                 save   2       (current)
+
+                 save   7       (voltage)
+
+
+
+    tran: time = 34 ns       (2.54 %), step = 3 ns         (231 m%)
+
+    tran: time = 100 ns      (7.62 %), step = 3 ns         (231 m%)
+
+    tran: time = 166 ns      (12.7 %), step = 3 ns         (231 m%)
+
+    tran: time = 229 ns      (17.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 295 ns      (22.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 361 ns      (27.7 %), step = 3 ns         (231 m%)
+
+    tran: time = 424 ns      (32.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 490 ns      (37.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 556 ns      (42.7 %), step = 3 ns         (231 m%)
+
+    tran: time = 619 ns      (47.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 685 ns      (52.7 %), step = 3 ns         (231 m%)
+
+    tran: time = 748 ns      (57.5 %), step = 3 ns         (231 m%)
+
+    tran: time = 814 ns      (62.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 880 ns      (67.7 %), step = 3 ns         (231 m%)
+
+    tran: time = 943 ns      (72.5 %), step = 3 ns         (231 m%)
+
+    tran: time = 1.009 us    (77.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 1.075 us    (82.7 %), step = 3 ns         (231 m%)
+
+    tran: time = 1.138 us    (87.5 %), step = 3 ns         (231 m%)
+
+    tran: time = 1.204 us    (92.6 %), step = 3 ns         (231 m%)
+
+    tran: time = 1.27 us     (97.7 %), step = 3 ns         (231 m%)
+
+Number of accepted tran steps =             433
+
+
+
+Maximum value achieved for any signal of each quantity: 
+
+V: V(cell1.net1) = 10.57 kV
+
+I: I(cell1.I:Rreal_flow) = 10.57 kA
+
+If your circuit contains signals of the same quantity that are vastly different
+
+        in size (such as high voltage circuitry combined with low voltage
+
+        control circuitry), you should consider specifying global option
+
+        `bin_relref=yes'.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Post-Transient Simulation Summary
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   -   Non-default settings that could significantly slow down simulation
+
+          maxstep = 3 ns, default 26 ns
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+During simulation, the CPU load for active processors is :
+
+        Spectre  1 (65.0 %)      3 (8.7 %)      13 (19.0 %)     19 (100.0 %)
+
+        Other    0 (100.0 %)     2 (4.8 %)       6 (27.3 %)     14 (4.8 %)
+                16 (100.0 %)    18 (61.9 %)     20 (4.8 %)      22 (4.5 %)
+
+Initial condition solution time: CPU = 3.998 ms, elapsed = 1.58405 ms.
+Intrinsic tran analysis time:    CPU = 71.989 ms, elapsed = 36.3431 ms.
+
+Total time required for tran analysis `tran': CPU = 78.987 ms, elapsed = 40.297
+        ms.
+
+Time accumulated: CPU = 415.936 ms, elapsed = 325.571 ms.
+
+Peak resident memory used = 63.2 Mbytes.
+
+
+
+
+Aggregate audit (7:31:37 PM, Wed May 31, 2023):
+
+Time used: CPU = 420 ms, elapsed = 329 ms, util. = 128%.
+
+Time spent in licensing: elapsed = 20.5 ms, percentage of total = 6.25%.
+
+Peak memory used = 63.6 Mbytes.
+
+Simulation started at: 7:31:37 PM, Wed May 31, 2023, ended at: 7:31:37 PM, Wed
+
+        May 31, 2023, with elapsed time (wall clock): 329 ms.
+
+spectre completes with 0 errors, 1 warning, and 4 notices.
+
+reading simulation data...
+      ...successful.
+reading simulation data...
+      ...successful.

@@ -134,9 +134,10 @@ real R; 						//resistance of MTJ
 /*---------Parameters for stochastic behaviors---------------*/
 parameter integer STO=0 from[0:2];  	// stochastic dynamic, 0 no stochastic, 1 random exponential distribution, 2 random gauss distribution
 parameter integer RV=0 from[0:2]; 	//choice of process variation intrinsically, 0 no stochastic, 1 random uniform distribution,2 random gauss distribution
-parameter real DEV_tox=0.03; 		// standard deviation of gauss distribution for tox when RV=2 
-parameter real DEV_tsl=0.03; 		// standard deviation of gauss distribution for tsl when RV=2
-parameter real DEV_TMR=0.03;		// standard deviation of gauss distribution for TMRwhen RV=2 
+parameter real dev = 0;
+parameter real DEV_tox=dev; //0.03; 		// standard deviation of gauss distribution for tox when RV=2 
+parameter real DEV_tsl=dev; //0.03; 		// standard deviation of gauss distribution for tsl when RV=2
+parameter real DEV_TMR=dev; //0.03;		// standard deviation of gauss distribution for TMRwhen RV=2 
 parameter real STO_dev=1;		// standard deviation of stochastic dynamic gauss distribution when STO=2
 
 /*------------------------------------variables-------------------------------------*/
@@ -373,7 +374,7 @@ begin
 			
 			if(duration<=($abstime-P_APt))  // duration is enough to switch  //Switching of the free layer always occurs
 			begin
-				ix=1.0;	//should be -1.0;		// change of the current state of MTJ	
+				ix=1.0;	     // change of the current state of MTJ	
 			end
 			else
 			begin
@@ -410,7 +411,7 @@ begin
 					end										
                    	if (($abstime-NP_APt) >= duration)	
 					begin
-						ix=1.0;    //should be -1.0 !!!
+						ix=1.0;  
 					end
 					else
 					begin

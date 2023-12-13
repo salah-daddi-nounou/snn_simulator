@@ -1,0 +1,2 @@
+parameters mem_vth=0.012 spike_duration=0.01 sim_time=0.15 RV_dev=0 \
+    gl_Temp_var=0 gl_T=300 gl_RV=0 gl_STO=1

@@ -5,7 +5,7 @@ ahdl_include "/home/users/daddinos/projet_cmos28fdsoi_12/snn_simulator/src/out_n
 // ===================================================== 
 subckt cellPMAMTJ T1 T2 
 parameters param1 param2 param3 param4 param5 param6 
-    I (T2 T1 ) Model \ 
+    I (T1 T2 ) Model \ 
 	STO      = param1 \	
 	RV       = param2 \
 	T        = param3 \

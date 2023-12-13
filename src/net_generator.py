@@ -60,7 +60,7 @@ class Synapse_subskt:
         self.num_cells = num_cells
 
     def generate_netlist_bloc(self):
-        template = ("subckt compound_synapse ter1 ter2 \n"
+        template = ("subckt compound_synapse in_ter out_ter \n"
                     "parameters {} \n")
 
         parameters = " ".join(["seed{}".format(i+1) for i in range(self.num_cells)] +
@@ -68,7 +68,7 @@ class Synapse_subskt:
         
         cells = ""
         for i in range(self.num_cells):
-            cell_line = ("\tcell{} (ter1 ter2) cellPMAMTJ   param1=gl_STO   param2=gl_RV   param3=gl_T   param4=gl_Temp_var   "
+            cell_line = ("\tcell{} (out_ter in_ter) cellPMAMTJ   param1=gl_STO   param2=gl_RV   param3=gl_T   param4=gl_Temp_var param7=RV_dev   "
                          "param5=PAP{}   param6=seed{}\n".format(i+1, i+1, i+1))
             cells += cell_line
         

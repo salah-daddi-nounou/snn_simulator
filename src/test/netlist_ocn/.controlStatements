@@ -1,7 +1,7 @@
 simulatorOptions options reltol=1e-3 vabstol=1e-6 iabstol=1e-12 temp=27 \
     tnom=27 multithread=on scalem=1.0 scale=1.0 gmin=1e-12 rforce=1 \
     maxnotes=5 maxwarns=5 digits=5 cols=80 pivrel=1e-3 
-tran tran stop=1300n start=1n step=3n maxstep=3n minstep=3n \
+tran tran stop=5u start=0 step=100n maxstep=100n minstep=100n \
     annotate=status oppoint=no maxiters=5 
-save pre:p down top 
-saveOptions options save=allpub
+save synapse*.cell*.I:ix all 
+saveOptions options save=allpub currents=all saveahdlvars=selected

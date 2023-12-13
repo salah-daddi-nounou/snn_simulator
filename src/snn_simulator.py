@@ -9,17 +9,21 @@ from net_generator import *
 
 start_time = tm.time()
 # chosen design paraeters
-variables = {'sim_time' : 50e-3, 'spike_duration' : 10e-3, 'mem_vth': 12e-3,           
+variables = {'sim_time' : 150e-3, 'spike_duration' : 10e-3, 'mem_vth': 12e-3,           
              'num_input': 25, 'num_output': 1, 'num_cells': 2,
-             'cod_base' : 3, 'cod_max' : 10, 'inp_img': 'X'}
+             'cod_base' : 3, 'cod_max' : 10, 'inp_img': 'X', 'dev': 0}
 
 # Preapare combinations to run multiprocessing simulations
 param_combinations = []
-#inp_img = ['I','O','C','F','H','K','L','P','T','U','Y']
-inp_img = ['X']
+#inp_img = ['I','O','C','F','H','K','L','P','T','U']
+#deviation = [i/100 for i in range(0,25,5)]
+deviation = [0]
+mtjs = [2] 
 
-for a in inp_img:
-    variables['inp_img'] =a
+for a in deviation:
+  for b in mtjs:
+    variables['dev'] =a
+    variables['num_cells'] = b
     param_combinations.append(variables.copy())
 
 def run_simulation(params):
