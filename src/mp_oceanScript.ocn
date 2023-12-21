@@ -16,7 +16,7 @@ saveOption(  ?infoOptions list(list("modelParameter" "models" "rawfile" "" "" ""
 ;saveOption( 'pwr "devices" )
 
 desVar(	  "gl_STO"       1        	    )
-desVar(	  "gl_RV"        0 	            ) ;2
+desVar(	  "gl_RV"        2 	            ) ;2
 desVar(	  "gl_T"         300	        )
 desVar(	  "gl_Temp_var"  0              )
 

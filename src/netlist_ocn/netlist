@@ -4,14 +4,15 @@ ahdl_include "/home/users/daddinos/projet_cmos28fdsoi_12/snn_simulator/src/out_n
 
 // ===================================================== 
 subckt cellPMAMTJ T1 T2 
-parameters param1 param2 param3 param4 param5 param6 
+parameters param1 param2 param3 param4 param5 param6 param7 
     I (T1 T2 ) Model \ 
 	STO      = param1 \	
 	RV       = param2 \
 	T        = param3 \
     Temp_var = param4 \ 
 	PAP      = param5 \ 
-	STO_seed = param6
+	mtj_seed = param6 \ 
+	dev      = param7 
 ends cellPMAMTJ
 // ===================================================== 
 

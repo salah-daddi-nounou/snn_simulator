@@ -1,5 +1,4 @@
 import random
-
 class Synapse:
     """
     A class to specify a netlist bloc that describes an MTJ-based synapse of the SNN, 
@@ -67,7 +66,7 @@ class Synapse_subskt:
                               ["PAP{}".format(i+1) for i in range(self.num_cells)])
         
         cells = ""
-        for i in range(self.num_cells):
+        for i in range(self.num_cells): #Here we define synapse terminals in a way to let MTJs T2 terminal node same as synapse's input node
             cell_line = ("\tcell{} (out_ter in_ter) cellPMAMTJ   param1=gl_STO   param2=gl_RV   param3=gl_T   param4=gl_Temp_var param7=RV_dev   "
                          "param5=PAP{}   param6=seed{}\n".format(i+1, i+1, i+1))
             cells += cell_line

@@ -11,14 +11,13 @@ start_time = tm.time()
 # chosen design paraeters
 variables = {'sim_time' : 150e-3, 'spike_duration' : 10e-3, 'mem_vth': 12e-3,           
              'num_input': 25, 'num_output': 1, 'num_cells': 2,
-             'cod_base' : 3, 'cod_max' : 10, 'inp_img': 'X', 'dev': 0}
+             'cod_base' : 3, 'cod_max' : 10, 'inp_img': 'U', 'dev': 0}
 
 # Preapare combinations to run multiprocessing simulations
 param_combinations = []
 #inp_img = ['I','O','C','F','H','K','L','P','T','U']
-#deviation = [i/100 for i in range(0,25,5)]
-deviation = [0]
-mtjs = [2] 
+deviation = [i/100 for i in range(0,25,5)]
+mtjs = [2,4,6,8] 
 
 for a in deviation:
   for b in mtjs:
@@ -53,7 +52,9 @@ def run_simulation(params):
     # Format date and time as a string in the format 'MMDD_HHMM'
     now = datetime.datetime.now()
     date = now.strftime("%m%d_%H%M")     
-    process_dir = f"dat_{date}_pross_{os.getpid()}"          # name the folder with date,time & process
+    #process_dir = f"dat_{date}_pross_{os.getpid()}"          # name the folder with date,time & process
+    process_dir = f"dat_{date}_pross_{os.getpid()}_dev{params['dev']}_cells{params['num_cells']}"    #include the paramters with date & process
+
     abs_process_dir = os.path.join(base_dir, process_dir)
     
     # Creat a proces-specific directory for simulation files and results
@@ -70,6 +71,7 @@ def run_simulation(params):
     params["results_file"] = results_file                    # path to the file where results are written 
     params["save_states"] = save_states                      # a string contains signals to be written in results file
    
+#    random.seed(0)
     network_generator = NetworkGenerator(netlist, params['num_input'], params['num_output'], params['num_cells'], n_spik_vec)
     network_generator.generate_netlist_file()                # the comlete netlist file is created 
         

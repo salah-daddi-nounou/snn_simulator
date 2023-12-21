@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
 import sys
 
 if len(sys.argv) < 2:
@@ -35,15 +36,21 @@ axe2.grid(True)
 
 fig2, (axe3, axe4) = plt.subplots(1, 2, figsize=(8, 4))
 # Display the initial weights
-axe3.imshow(init_weights_img, cmap='gray_r')
+im3 = axe3.imshow(init_weights_img, cmap='gray') #'gray_r'
 axe3.set_title("Initial Weights")
 axe3.axis('off')
+cbar1 = plt.colorbar(im3, ax=axe3)
+cbar1.locator = MaxNLocator(integer=True)
+cbar1.update_ticks()
 
-# Display the final trained weights 
-axe4.imshow(final_weights_img, cmap='gray_r')
-axe4.set_title("trained weights")
+# Display the final trained weights
+im4 = axe4.imshow(final_weights_img, cmap='gray')
+axe4.set_title("Trained Weights")
 axe4.axis('off')
+cbar2 = plt.colorbar(im4, ax=axe4)
+cbar2.locator = MaxNLocator(integer=True)
+cbar2.update_ticks()
 
-plt.tight_layout()  
+plt.tight_layout()
 plt.show()
 
