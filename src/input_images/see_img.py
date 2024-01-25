@@ -3,7 +3,7 @@ import numpy as np
 import os
 import matplotlib.pyplot as plt 
 
-input = "letter_imgs/generated_T.npy"
+input = "letter_imgs/generated_H.npy"
 #input = "./mnist_npy/image_10.npy"
 
 image = np.load(input)

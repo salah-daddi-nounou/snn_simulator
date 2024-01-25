@@ -6,7 +6,12 @@ from multiprocessing import Pool
 import os
 from distutils.dir_util import copy_tree
 from net_generator import *
+import shutil
 
+'''
+Input images are stored in binary formats (individually: .npy arrays, 
+and collectively: .pkl dict) all files generated at once. 
+'''
 start_time = tm.time()
 # chosen design paraeters
 variables = {'sim_time' : 150e-3, 'spike_duration' : 10e-3, 'mem_vth': 12e-3,           
@@ -15,15 +20,18 @@ variables = {'sim_time' : 150e-3, 'spike_duration' : 10e-3, 'mem_vth': 12e-3,
 
 # Preapare combinations to run multiprocessing simulations
 param_combinations = []
-#inp_img = ['I','O','C','F','H','K','L','P','T','U']
+
+inputs = ['I','O','C','F','H','K','L','P','T','U','X']
 deviation = [i/100 for i in range(0,25,5)]
 mtjs = [2,4,6,8] 
 
-for a in deviation:
-  for b in mtjs:
-    variables['dev'] =a
-    variables['num_cells'] = b
-    param_combinations.append(variables.copy())
+for a in inputs: 
+  for b in deviation:
+    for c in mtjs:
+      variables['inp_img'] = a  
+      variables['dev'] = b
+      variables['num_cells'] = c
+      param_combinations.append(variables.copy())
 
 def run_simulation(params):
     '''
@@ -53,7 +61,7 @@ def run_simulation(params):
     now = datetime.datetime.now()
     date = now.strftime("%m%d_%H%M")     
     #process_dir = f"dat_{date}_pross_{os.getpid()}"          # name the folder with date,time & process
-    process_dir = f"dat_{date}_pross_{os.getpid()}_dev{params['dev']}_cells{params['num_cells']}"    #include the paramters with date & process
+    process_dir = f"dat_{date}_pross_{os.getpid()}_let{params['inp_img']}_dev{params['dev']}_cells{params['num_cells']}"    #include the paramters with date & process
 
     abs_process_dir = os.path.join(base_dir, process_dir)
     
@@ -71,7 +79,7 @@ def run_simulation(params):
     params["results_file"] = results_file                    # path to the file where results are written 
     params["save_states"] = save_states                      # a string contains signals to be written in results file
    
-#    random.seed(0)
+    random.seed(10)
     network_generator = NetworkGenerator(netlist, params['num_input'], params['num_output'], params['num_cells'], n_spik_vec)
     network_generator.generate_netlist_file()                # the comlete netlist file is created 
         
@@ -79,6 +87,7 @@ def run_simulation(params):
     log_file = os.path.join(abs_process_dir, f"oceanScript.log") 
     subst_run.substitute_templ("./mp_oceanScript.ocn", updated_template_file, params)
     subst_run.exec_cmd(f"ocean -nograph < {updated_template_file} > {log_file}") 
+    shutil.rmtree(f"{abs_process_dir}/psf") # remove the psf directory
 
 def main():
     with Pool() as p:

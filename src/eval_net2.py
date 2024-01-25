@@ -3,7 +3,11 @@ import os
 import glob
 import pickle
 import matplotlib.pyplot as plt
-
+'''
+Input images are stored in binary formats (individually: .npy arrays, 
+and collectively: .pkl dict) all files generated at once. 
+'''
+'''
 trained_letters_dict = {
     'C': "../../snn_sim_folders/dat_1218_1212_pross_414*",
     'I': "../../snn_sim_folders/dat_1218_1347_pross_25*",
@@ -17,6 +21,23 @@ trained_letters_dict = {
     'F': "../../snn_sim_folders/dat_1220_1459_pross_272*",  #double
     'T': "../../snn_sim_folders/dat_1220_1602_pross_67*",
     'U': "../../snn_sim_folders/dat_1220_1649_pross_155*",
+}
+'''
+#'C': "../../snn_sim_folders/dat_1222_*_pross_*_letC*"
+
+
+trained_letters_dict = {
+    'C': "../../snn_sim_folders/dat_1222_*_pross_*_letC*",
+    'I': "../../snn_sim_folders/dat_1222_*_pross_*_letI*", 
+    'O': "../../snn_sim_folders/dat_1222_*_pross_*_letO*",
+    'F': "../../snn_sim_folders/dat_1222_*_pross_*_letF*",
+    'H': "../../snn_sim_folders/dat_1222_*_pross_*_letH*",
+    'L': "../../snn_sim_folders/dat_1222_*_pross_*_letL*",
+    'P': "../../snn_sim_folders/dat_1222_*_pross_*_letP*",
+    'K': "../../snn_sim_folders/dat_1222_*_pross_*_letK*",
+    'T': "../../snn_sim_folders/dat_1222_*_pross_*_letT*",
+    'U': "../../snn_sim_folders/dat_1222_*_pross_*_letU*",
+    'X': "../../snn_sim_folders/dat_1222_*_pross_*_letX*",
 }
 
 VR_std = [i / 100 for i in range(0, 25, 5)]
@@ -87,32 +108,29 @@ def calculate_dist(base_dir, letter_image):
     return euclidean_distances
 
 def plot_distances(euclidean_distances, title):
-    plt.figure()
+    fig, axe1 = plt.subplots()
     for num_cells, dev_distances in euclidean_distances.items():
         devs = sorted(dev_distances.keys())
         distances = [np.mean(dev_distances[dev]) for dev in devs]
-        plt.plot(devs, distances, label=f'num_cells={num_cells}', marker='o')
+        axe1.plot(devs, distances, label=f'num_cells={num_cells}', marker='o')
 
-    plt.xlabel('VR_std')
-    plt.ylabel('Euclidean Distance')
-    plt.title(title)
-    plt.legend()
-    plt.show()
+    axe1.set_xlabel('VR_std')
+    axe1.set_ylabel('Euclidean Distance')
+    axe1.set_title(title)
+    axe1.legend()
 
-
-# Example usage
 # To calculate for a single letter
-#eucl_dist(trained_letters_dict, 'I')
+eucl_dist(trained_letters_dict, 'I')
 #eucl_dist(trained_letters_dict, 'C')
 #eucl_dist(trained_letters_dict, 'K')
-#eucl_dist(trained_letters_dict, 'L')
+eucl_dist(trained_letters_dict, 'L')
 #eucl_dist(trained_letters_dict, 'P')
 #eucl_dist(trained_letters_dict, 'H')
-#eucl_dist(trained_letters_dict, 'O')
+eucl_dist(trained_letters_dict, 'O')
 #eucl_dist(trained_letters_dict, 'F')
 #eucl_dist(trained_letters_dict, 'T')
 eucl_dist(trained_letters_dict, 'U')
 
 # To calculate the average across multiple letters
 avg_eucl_dist(trained_letters_dict)
-
+plt.show()

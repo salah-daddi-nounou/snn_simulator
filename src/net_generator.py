@@ -24,9 +24,9 @@ class Synapse:
     def __init__(self, input_index, output_index, num_cells):
         self.input_index = input_index
         self.output_index = output_index
+        self.seeds = [random.randint(0, 9999) for _ in range(num_cells)]
         #self.paps = [i%2 for i in range(num_cells)]                 # alternate 0&1 in the MTJs of the synapse
         self.paps = [random.randint(0, 1) for _ in range(num_cells)] #initialize randamely
-        self.seeds = [random.randint(0, 9999) for _ in range(num_cells)]
 
     def generate_netlist_bloc(self):                 
         template = "synapse{}_{} (input{} output{}) compound_synapse "
