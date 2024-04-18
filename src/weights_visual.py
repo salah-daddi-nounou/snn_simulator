@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
+import os
 import sys
 
 if len(sys.argv) < 2:
@@ -20,6 +21,9 @@ init_weights_img = init_weights_flat.reshape((5,5))
 final_weights_flat = data[-1, 1:-1]
 #final_weights_flat = data[-1, 26:51]
 final_weights_img = final_weights_flat.reshape((5,5))
+
+# Update matplotlib global parameters for font
+plt.rcParams.update({'font.size': 14, 'font.family': 'serif'})
 
 # Plot the weights history
 fig, (axe1, axe2) = plt.subplots(2, 1, figsize=(5, 10))
@@ -52,5 +56,8 @@ cbar2.locator = MaxNLocator(integer=True)
 cbar2.update_ticks()
 
 plt.tight_layout()
+# save figure 2 in home directory 
+plt.savefig(os.path.join(os.path.expanduser("~"), os.path.basename(folder_name) + ".pdf"), format='pdf')
+
 plt.show()
 
