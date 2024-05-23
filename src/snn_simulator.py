@@ -85,7 +85,7 @@ def run_simulation(params):
         
     updated_template_file = os.path.join(abs_process_dir, f"updated_template.ocn")
     log_file = os.path.join(abs_process_dir, f"oceanScript.log") 
-    subst_run.substitute_templ("./mp_oceanScript.ocn", updated_template_file, params)
+    subst_run.substitute_templ("./oceanScript.ocn", updated_template_file, params)
     subst_run.exec_cmd(f"ocean -nograph < {updated_template_file} > {log_file}") 
     shutil.rmtree(f"{abs_process_dir}/psf") # remove the psf directory
 

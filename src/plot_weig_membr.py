@@ -5,13 +5,13 @@ import os
 import sys
 
 if len(sys.argv) < 2:
-    print("Usage: python script_name.py folder_name")
+    print("Usage: python script_name.py simulations folder_name")
     sys.exit(1)
 
 folder_name = sys.argv[1]
 
 data = np.genfromtxt(f"{folder_name}/results.txt", delimiter="", skip_header=4)
-# data structure :    
+# structure of data :    
 #                    time | synapse1 | synapse2 | ... | membrane_out_neuron
 
 init_weights_flat = data[0, 1:-1]
@@ -57,7 +57,7 @@ cbar2.update_ticks()
 
 plt.tight_layout()
 # save figure 2 in home directory 
-plt.savefig(os.path.join(os.path.expanduser("~"), os.path.basename(folder_name) + ".pdf"), format='pdf')
+#plt.savefig(os.path.join(os.path.expanduser("~"), os.path.basename(folder_name) + ".pdf"), format='pdf')
 
 plt.show()
 

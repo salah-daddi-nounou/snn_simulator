@@ -1,1 +1,0 @@
-spectre  input.scs  +escchars +log ../results/psf/spectre.out  -raw ../results/psf   -recover -savestate +lqtimeout 900 -maxw 5 -maxn 5 -log ++aps +postlayout   

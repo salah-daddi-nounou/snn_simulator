@@ -1,4 +1,4 @@
-ahdl_include "/home/users/daddinos/projet_cmos28fdsoi_12/snn_simulator/src/wang_model.va"
+ahdl_include "/home/users/daddinos/projet_cmos28fdsoi_12/snn_simulator/src/mtj_model.va"
 ahdl_include "/home/users/daddinos/projet_cmos28fdsoi_12/snn_simulator/src/in_neuron.va"
 ahdl_include "/home/users/daddinos/projet_cmos28fdsoi_12/snn_simulator/src/out_neuron.va"
 
