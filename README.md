@@ -2,7 +2,7 @@
 <h1>SPICE-Based SNN Simulator</h1>
 </div>
 
-[![Documentation Status](https://readthedocs.org/projects/snn_simulator/badge/?version=latest)](https://salah-daddi-nounou.github.io/)
+[![Documentation Status](https://readthedocs.org/projects/snn_simulator/badge/?version=latest)](https://salah-daddi-nounou.github.io/snn_simulator/)
 
 ## Overview
 
@@ -17,7 +17,7 @@ This project provides a framework for simulating spiking neural networks (SNNs) 
 
 ## Documentation
 
-Usage guide and comprehensive documentation are available [here](https://salah-daddi-nounou.github.io/)
+Usage guide and comprehensive documentation are available [here](https://salah-daddi-nounou.github.io/snn_simulator/)
 
 ## Getting Started
 
