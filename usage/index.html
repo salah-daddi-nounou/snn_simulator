@@ -8,26 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://salah-daddi-nounou.github.io/">
+        <link rel="canonical" href="https://salah-daddi-nounou.github.io/usage/">
       
       
+        <link rel="prev" href="..">
       
-        <link rel="next" href="usage/">
+      
+        <link rel="next" href="../workflow/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
     
     
       
-        <title>SNN simulator</title>
+        <title>Usage - SNN simulator</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.6543a935.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#usage" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="SNN simulator" class="md-header__button md-logo" aria-label="SNN simulator" data-md-component="logo">
+    <a href=".." title="SNN simulator" class="md-header__button md-logo" aria-label="SNN simulator" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Usage
             
           </span>
         </div>
@@ -220,11 +222,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
         
   
     
@@ -239,9 +239,11 @@
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="usage/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
     
@@ -258,7 +260,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="workflow/" class="md-tabs__link">
+      <a href="../workflow/" class="md-tabs__link">
         
   
     
@@ -277,7 +279,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="api/" class="md-tabs__link">
+        <a href="../api/" class="md-tabs__link">
           
   
     
@@ -314,7 +316,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="SNN simulator" class="md-nav__button md-logo" aria-label="SNN simulator" data-md-component="logo">
+    <a href=".." title="SNN simulator" class="md-nav__button md-logo" aria-label="SNN simulator" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -341,6 +343,26 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -350,23 +372,25 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   <span class="md-ellipsis">
-    Home
+    Usage
   </span>
   
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="." class="md-nav__link md-nav__link--active">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Home
+    Usage
   </span>
   
 
@@ -378,6 +402,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -386,66 +412,102 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
+  <a href="#setting-up-simulations" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction
+      Setting Up Simulations
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-background" class="md-nav__link">
-    <span class="md-ellipsis">
-      Project Background
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Overview">
+    <nav class="md-nav" aria-label="Setting Up Simulations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#device-models" class="md-nav__link">
+  <a href="#step-1-configuring-the-design-simulation-parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      Device Models
+      Step 1: Configuring the design &amp; Simulation Parameters
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#netlist-generation" class="md-nav__link">
+  <a href="#step-2-running-the-simulation" class="md-nav__link">
     <span class="md-ellipsis">
-      Netlist Generation
+      Step 2: Running the Simulation
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#simulation-and-analysis" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-of-simulation-result-folders" class="md-nav__link">
     <span class="md-ellipsis">
-      Simulation and Analysis
+      Structure of Simulation Result Folders
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plotting-the-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plotting the Results
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plotting the Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plotting-weight-and-membrane-potential" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plotting Weight and Membrane Potential
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plotting Weight and Membrane Potential">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotting-euclidean-distance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plotting Euclidean Distance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plotting Euclidean Distance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -469,27 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="usage/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Usage
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="workflow/" class="md-nav__link">
+      <a href="../workflow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -555,7 +597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="api/" class="md-nav__link">
+      <a href="../api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -624,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="in_neuron/" class="md-nav__link">
+      <a href="../in_neuron/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -645,7 +687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="out_neuron/" class="md-nav__link">
+      <a href="../out_neuron/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -666,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="mtj_model/" class="md-nav__link">
+      <a href="../mtj_model/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -710,7 +752,7 @@
                   
 
   
-    <a href="https://github.com/salah-daddi-nounou/snn_simulator/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/salah-daddi-nounou/snn_simulator/edit/master/docs/usage.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -719,40 +761,84 @@
     
       
     
-    <a href="https://github.com/salah-daddi-nounou/snn_simulator/raw/master/docs/index.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/salah-daddi-nounou/snn_simulator/raw/master/docs/usage.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-<h1 style="text-align: center;">SNN Training Framework</h1>
-
-<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
-<p>The SNN Training Framework streamlines the design, training, and analysis of Spiking Neural Networks (SNNs) with electrical simulations. These simulations aim to validate the concept of hardware implementation of SNNs with spintronic synapsees, which are energy effecient and allow unsupervised learning. The tool automates the generation of netlists for SPICE, running simulations with <code>Cadence Spectre</code>, and analyzing the results. It facilitates efficient exploration of various SNN configurations with a high degree of customization, with miminum intervintion from the user.</p>
-<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Automated Netlist Generation</strong>: Automatically generates detailed netlists essential for accurately modeling SNN behavior at the device level, using customizable parameters.</li>
-<li><strong>Integration with SPICE Simulator</strong>: Seamlessly integrates with <code>Cadence Ocean</code> tool and uses <code>Spectre</code> simulator, allowing electrical simulation, without much worrying about the design and resutls handelign. </li>
-<li><strong>Parallel Processing Capabilities</strong>: Supports multiprocessing to conduct parallel simulations and parametric analysis, crucial for simultaneous and fast design exploration of different SNNs. </li>
-<li><strong>Performance Analysis</strong>: Provides comprehensive post-simulation results, including synaptic weight evolution, neuron membrane potential dynamics, and overall learning performance, with minimal user input beyond the initial setup.</li>
-</ul>
-<h2 id="project-background">Project Background<a class="headerlink" href="#project-background" title="Permanent link">&para;</a></h2>
-<p>Simulation environments for SNNs vary widely based on their objectives, from functional to behavioral simulations. Electrical simulations with SPICE are critical for hardware implementation as they model synaptic conductance and neuron membrane potentials using actual voltages and currents, providing essential validation for hardware implementations. This project was initially concieved during a PhD to automate design explorations that simulate training of SNNs with MTJ-based synapses, with a specific learing rule, but can be adapted for other type of synapses and learning rules. Conducting SNN training in SPICE validates learning rules like STDP and demonstrates the feasibility of online learning through dynamic conductance changes in spintronic synapses. Although SPICE simulations are computationally expensive, they offer rigorous, hardware-accurate results suitable for small networks.</p>
-<p>Development and training of SNNs at the device level pose some challenges, especially in network design, which often involves creating complex schematics or manually writing netlists. This process is time-consuming and prone to errors. This framework addresses these challenges by automating the design and training of SNNs with electrical simulations. By automating these processes, we save time and reduce the potential for human error, making it significantly easier to manage and explore various network configurations efficiently.</p>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>The tool handles the design and netlist creation, while the actual simulations are executed in SPICE. The design consists of input and output neurons described in Verilog-A, fully conencted by spintornic synapses. Each synapse is composed of multiple Magnetic Tunnel Junction (MTJs) connected in parallel. The learning rule is derived from the physical behaviour of the stochastic synapse and is labeled Bi-Sigmoid STDP. </p>
-<h3 id="device-models">Device Models<a class="headerlink" href="#device-models" title="Permanent link">&para;</a></h3>
-<p>The framework includes the following Verilog-A device description models:</p>
-<ol>
-<li><strong>MTJ Model</strong>: Integrates the electrical and magnetic behavior of the MTJ and simulates its use as a two-state memory device. </li>
-<li><strong>Input Neuron Model</strong>: A spiking neuron model that encodes the input images and feed them to the network.</li>
-<li><strong>Output Neuron Model</strong>: A leaky integrate-and-fire neuron model used as an output neuron.</li>
-</ol>
-<h3 id="netlist-generation">Netlist Generation<a class="headerlink" href="#netlist-generation" title="Permanent link">&para;</a></h3>
-<p>Along with these necessary device descriptions, a netlist that describes the full network is required. The framework allows automatic generation of a netlist for SNNs of any size. The operator only needs to input basic information such as the number of input and output neurons, the number of MTJs per synapse, and a time window during which an input image is presented to the network. The framework then generates the corresponding netlist.</p>
-<h3 id="simulation-and-analysis">Simulation and Analysis<a class="headerlink" href="#simulation-and-analysis" title="Permanent link">&para;</a></h3>
-<p>Once the netlist has been generated, the simulation is launched automatically in <code>Spectre</code>. It inputs the image pixels to the network, the input neurons spike according to a given coding, and the signal is fed forward in the form of current, allowing the network to learn the patterns using the B2STDP rule, which is specific to SNNs. The framework tracks the history of each synapse and neuron in the network and provides different plotting and visualization functionalities.</p>
+<h1 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h1>
+<p>A guide to using the SNN Simulator framework is provided here. It covers setting up the SNN design and simulation parameters, launching the simulations, and plotting the results. For the requirements, you only need <code>Candence Spectre</code> licence instaled, along with <code>python3</code> with <code>numpy</code> and <code>matplotlib</code> packages. As of the current development of the project, no specific PDK is required.  </p>
+<h2 id="setting-up-simulations">Setting Up Simulations<a class="headerlink" href="#setting-up-simulations" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-configuring-the-design-simulation-parameters">Step 1: Configuring the design &amp; Simulation Parameters<a class="headerlink" href="#step-1-configuring-the-design-simulation-parameters" title="Permanent link">&para;</a></h3>
+<p>The SNN design and simulation parameters are configured in the <code>snn_simulator.py</code> script. Here, you can specify the number of input and output neurons, the number of MTJs per synapse, the spike duration, and other simulation-specific parameters.</p>
+<p>Example configuration in <code>snn_simulator.py</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Chosen design parameters</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">variables</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="s1">&#39;sim_time&#39;</span><span class="p">:</span> <span class="mf">150e-3</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="s1">&#39;spike_duration&#39;</span><span class="p">:</span> <span class="mf">10e-3</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="s1">&#39;mem_vth&#39;</span><span class="p">:</span> <span class="mf">12e-3</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="s1">&#39;num_input&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="s1">&#39;num_output&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="s1">&#39;num_cells&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="s1">&#39;cod_base&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="s1">&#39;cod_max&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="s1">&#39;inp_img&#39;</span><span class="p">:</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="s1">&#39;dev&#39;</span><span class="p">:</span> <span class="mi">0</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1"># Prepare combinations to run multiprocessing simulations</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">param_combinations</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="n">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">]</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="n">deviation</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">/</span> <span class="mi">100</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="n">mtjs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">inputs</span><span class="p">:</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">deviation</span><span class="p">:</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">mtjs</span><span class="p">:</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>            <span class="n">variables</span><span class="p">[</span><span class="s1">&#39;inp_img&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>            <span class="n">variables</span><span class="p">[</span><span class="s1">&#39;dev&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>            <span class="n">variables</span><span class="p">[</span><span class="s1">&#39;num_cells&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>            <span class="n">param_combinations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">variables</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+</code></pre></div>
+<p>In this example, we create combinations of different inputs, number of MTJs composing a synapse, and diffrent standard deviations for variability distributions in the synapses. Each combination of these parameters represents a unique SNN design that will be simulated in parallel. In this case, <code>param_combinations</code> will have a length of 220, corresponding to the number of SNN that will simulated simultanuously. </p>
+<h3 id="step-2-running-the-simulation">Step 2: Running the Simulation<a class="headerlink" href="#step-2-running-the-simulation" title="Permanent link">&para;</a></h3>
+<p>Run the <code>snn_simulator.py</code> script from <code>snn_simulator/src/</code> directory to start the simulations. We recommand creating a separate directory for the simulation results outside of the project, like <code>../../snn_sim_folders</code>. The framework will automatically create different folders in that directory for each simulation configuration. Each folder will contain the generated netlist, the updated <code>.ocn</code> script, and a <code>results.txt</code> file with the simulation results.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&gt;&gt;<span class="w"> </span>python<span class="w"> </span>snn_simulator.py
+</code></pre></div>
+Each run of <code>python snn_simulator.py</code> will execute the created SNN design simulations in parallel. The only limitation of the number of concurrent simulations will be the available number of CPU threads. If the number of simulations exceeds the available threads, the additional simulations will queue and start as soon as a CPU thread becomes available.</p>
+<h2 id="structure-of-simulation-result-folders">Structure of Simulation Result Folders<a class="headerlink" href="#structure-of-simulation-result-folders" title="Permanent link">&para;</a></h2>
+<p>Each simulation generates SNN folders in the <code>../../snn_sim_folders</code> directory with a specific naming convention. The folder names are automatically generated to include the date and time when the simulation was started, process ID of the simulation run, followed by the explored parameters in that simulation, in our previous example that owuld be : tletter (input image), variability std, and the number of MTJs (cells). The general format for naming the simulation result folders is:</p>
+<p><code>dat_&lt;date&gt;_&lt;time&gt;_pross&lt;process_id&gt;_param1&lt;param1value&gt;_param2&lt;param2value&gt;.../</code></p>
+<p><em>Example:</em> </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>dat_1225_1719_pross_48757_letX_dev0.15_cells8
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>dat_1225_1721_pross_48748_letX_dev0.15_cells2
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>dat_1225_1721_pross_48760_letX_dev0.0_cells2
+</code></pre></div>
+<p>Each of these simulation folders corresponds to a certain SNN design and contains the <code>netlist</code> files, <code>updated_template.ocn</code> script, and <code>results.txt</code> file containing the history of the weights of synapses and the output neuron membrane potential.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>dat_1225_1719_pross_48757_letX_dev0.15_cells8/
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├── netlist
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>├── netlist_ocn
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>│   ├── input.scs
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>│   ├── netlist
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>│   ├── netlistFooter
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>│   ├── netlistHeader
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>├── results.txt
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>└── updated_template.ocn
+</code></pre></div>
+<h2 id="plotting-the-results">Plotting the Results<a class="headerlink" href="#plotting-the-results" title="Permanent link">&para;</a></h2>
+<h3 id="plotting-weight-and-membrane-potential">Plotting Weight and Membrane Potential<a class="headerlink" href="#plotting-weight-and-membrane-potential" title="Permanent link">&para;</a></h3>
+<p>The <code>plot_weig_membr.py</code> script reads the simulation results from the <code>results.txt</code> file in a specified folder. It then plots the history of the synaptic weights and the membrane potential of the output neuron over the course of the simulation. It also displays a reconstructed image of the synapses states before and after training.  </p>
+<h4 id="usage_1">Usage<a class="headerlink" href="#usage_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&gt;&gt;<span class="w"> </span>python<span class="w"> </span>plot_weig_membr.py<span class="w"> </span>&lt;simulation_folder&gt;
+</code></pre></div>
+<h3 id="plotting-euclidean-distance">Plotting Euclidean Distance<a class="headerlink" href="#plotting-euclidean-distance" title="Permanent link">&para;</a></h3>
+<p>The <code>plot_eucl_dist.py</code> script evaluates the training quality of the synapses by calculating and plotting the Euclidean distance between the input pattern and the synapse conductance pattern after training. This metric is used because the small network is trained on one pattern at a time, making accuracy measures less relevant. By comparing the states of the synapses after training under various variability conditions, the script visualizes the impact of variability on synaptic learning. This analysis can be extended to different SNN configurations using different numbers of MTJs per synapse.</p>
+<h4 id="usage_2">Usage<a class="headerlink" href="#usage_2" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>&gt;&gt;<span class="w"> </span>python<span class="w"> </span>plot_eucl_dist.py
+</code></pre></div>
 
 
 
@@ -787,15 +873,31 @@
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="usage/" class="md-footer__link md-footer__link--next" aria-label="Next: Usage">
+          <a href="../workflow/" class="md-footer__link md-footer__link--next" aria-label="Next: Simulation Workflow">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Usage
+                Simulation Workflow
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -829,10 +931,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.code.select", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.code.select", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.ad660dcc.min.js"></script>
+      <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
       
     
   </body>
