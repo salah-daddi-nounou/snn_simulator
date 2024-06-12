@@ -1,4 +1,4 @@
-# SPICE-Based SNN Simulator
+<h1 style="text-align: center;">SPICE-Based SNN Simulator</h1>
 
 [![Documentation Status](https://readthedocs.org/projects/snn_simulator/badge/?version=latest)](https://salah-daddi-nounou.github.io/)
 
@@ -11,13 +11,11 @@ This project provides a framework for simulating spiking neural networks (SNNs) 
 - **Automatic Netlist Generation**: Generate netlists for SNNs of any size based on user-defined parameters.
 - **SPICE Simulation**: Automate SPICE simulations using the Cadence Spectre simulator.
 - **Parallel Processing**: Run multiple simulations in parallel to explore different network configurations.
-- **Result Analysis**: Plot the history of synaptic weights and membrane potentials, and calculate Euclidean distances to evaluate training quality.
+- **Result Analysis**: Plot the synaptic history and membrane potentials, and evaluate training quality under variability.
 
 ## Documentation
 
-Comprehensive documentation for the framework, including setup instructions, usage guides, and API references, is available at the following link:
-
-[![Documentation](https://img.shields.io/badge/documentation-available-blue)](https://salah-daddi-nounou.github.io/)
+Usage guide and comprehensive documentation are available [here](https://img.shields.io/badge/documentation-available-blue)](https://salah-daddi-nounou.github.io/)
 
 ## Getting Started
 
@@ -26,8 +24,8 @@ Comprehensive documentation for the framework, including setup instructions, usa
 Ensure you have the following software installed:
 
 - Python 3.x
-- Cadence Spectre simulator
-- Required Python libraries: numpy, matplotlib, argparse
+- Cadence Spectre simulator licence
+- Required Python libraries: numpy & matplotlib
 
 ### Installation
 
@@ -41,8 +39,6 @@ cd snn_simulator
 If you use this framework, please cite our publication:
 
 ```
-bibtex
-Copy code
 @article{daddinounou2024spice,
   title={SPICE-Level Demonstration of Unsupervised Learning with Spintronic Synapses in Spiking Neural Networks},
   author={Daddinounou, Salah and Gebregiorgis, Anteneh and Hamdioui, Said and Vatajelu, Elena-Ioana},
