@@ -1,4 +1,4 @@
-# SPICE-Level Demonstration of Unsupervised Learning with Spintronic Synapses in Spiking Neural Networks
+# SPICE-Based SNN Simulator
 
 [![Documentation Status](https://readthedocs.org/projects/snn_simulator/badge/?version=latest)](https://salah-daddi-nounou.github.io/)
 
@@ -34,5 +34,20 @@ Ensure you have the following software installed:
 Clone the repository and navigate to the project directory:
 
 ```bash
-git clone -b develop https://github.com/salah-daddi-nounou/snn_simulator.git
+git clone https://github.com/salah-daddi-nounou/snn_simulator.git
 cd snn_simulator
+```
+
+If you use this framework, please cite our publication:
+
+```
+bibtex
+Copy code
+@article{daddinounou2024spice,
+  title={SPICE-Level Demonstration of Unsupervised Learning with Spintronic Synapses in Spiking Neural Networks},
+  author={Daddinounou, Salah and Gebregiorgis, Anteneh and Hamdioui, Said and Vatajelu, Elena-Ioana},
+  journal={IEEE Access},
+  year={2024},
+  publisher={IEEE}
+}
+```
