@@ -87,7 +87,7 @@ The `plot_weig_membr.py` script reads the simulation results from the `results.t
 #### Usage
 
 ```bash
-python plot_weig_membr.py <simulation_folder>
+>> python plot_weig_membr.py <simulation_folder>
 ```
 
 ### Plotting Euclidean Distance
@@ -97,5 +97,5 @@ The `plot_eucl_dist.py` script evaluates the training quality of the synapses by
 #### Usage
 
 ```bash
-python plot_eucl_dist.py
+>> python plot_eucl_dist.py
 ```

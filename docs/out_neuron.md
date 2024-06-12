@@ -2,19 +2,14 @@
   <summary>Verilog-A model of Output neuron</summary>
 
 ```verilog
+/*
+Verilog-A model for leaky integrate-and-fire (LIF circuit)
+Adapted from : "The Effects of Radiation on Memristor-Based Electronic 
+Spiking Neural Networks." Dahl, Sumedha Gandharava (2020).
+*/
 
-// Verilog-A code for leaky integrate-and-fire (LIF circuit
 `include "constants.vams"
 `include "disciplines.vams"
-//`timescale 100ns / 1ps
-
-// Take care of current blowup error
-//nature Current
-//  abstol = 1e-14 ;
-//  access = I ;
-//  units = "A" ;
-//  blowup = 1e12 ;
-//endnature
 
 // Start of the module
 module LIF_neuron(nd_In) ; //, nd_cap);

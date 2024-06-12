@@ -2,6 +2,8 @@
 This module provides utility functions for substituting values into templates
 and executing shell commands. It is designed to facilitate the automation
 of script generation and execution processes.
+The substitution method used here is inspired by the approach in the monaco project by @servinagrero:
+https://github.com/servinagrero/monaco/tree/develop
 
 Functions:
     substitute_templ: Reads a template from a file, substitutes values from

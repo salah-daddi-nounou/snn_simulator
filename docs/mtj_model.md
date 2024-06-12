@@ -2,11 +2,6 @@
   <summary>Verilog-A model of MTJ device</summary>
 
 ```verilog
-
-// ix is set to 0 or 1 not 0 or -1 (it was set negative to indecate that the current flows out, when there were probing termnial)
-// removed the probing terminals because I can access the variables directly 
-// diffrent Brwon threshold for AP and P
-//---------
 /* Copyright @ 2018 Fert Beijing Institute, BDBC and School of Electronic and Information Engineering, Beihang Univeristy, Beijing 100191, China
 The terms under which the software and associated documentation (the Software) is provided are as the following:
 The Software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the Software or the use or other dealings in the Software.
@@ -32,6 +27,11 @@ In this model, it takes into account the static, dynamic and stochastic behavoir
 6.Stochastic model 
 7.Resistance variation
 8.Temperature evaluation
+-------------
+Modified by Salah DADDINOUNOU
+// Optimized the code and removed redundancy.
+// Signal ix is set to 0 or 1 not 0 or -1 (it was set negative to indecate that the current flows out, when there were a probing termnial)
+// Removed the probing terminals because the framework allows direct access to signals. Removed also temp terminal.   
 */
 /*--------------------The parameters are from the prototypes of Univ. Tohuku-------------------*/
 
@@ -64,7 +64,6 @@ inout T1, T2;
 electrical T1, T2;
 electrical n1,n2; //virtual terminals of RC circuit for temperature evaluation 
 /*----------Ttrans=store the state of the MTJ with time influence, non-volatile way------------- */
-
 
 /*--------------------MTJ Technology Parameters(Corresponds to the HITACHI MTJ Process)-------------*/ 
 
@@ -134,7 +133,6 @@ real temp; 						//real temperature of MTJ
 real temp_init; 				//temperature initialised
 real R; 						//resistance of MTJ
 
-
 /*---------Parameters for stochasticity and variability behaviors---------------*/
 parameter integer STO=0 from[0:2];  	    // stochasticity: 0=no stochastic, 1=random exponential distribution, 2=random gauss distribution
 parameter integer RV=0 from[0:2]; 	        // process varibility: 0 no var, 1 random uniform distribution,2 random gauss distribution
@@ -192,8 +190,6 @@ integer fp;
 //--------------------------------------------------------------------------------------------------------------------------------------//
 
 analog begin
-//$display("Icp	Rp	Vp", IcP, Rp, IcP*Rp);
-//$display("IcAP	Rap	Vap", IcAP, Rap, IcAP*Rap);
 
 if (SHAPE==1)				//square
 begin
@@ -212,15 +208,8 @@ Vc=V(T2,T1);
 Vb=V(T1,T2);
 
 @(initial_step) begin
-//fp=$fopen("/home/users/daddinos/projet_cmos28fdsoi_12/synapse_spinlib/va_output","a");
-//$fwrite(fp,"\tcurr_time \tduration \tvoltage \n");
-//$fwrite(fp,"\tPAP,	T,	STO,	RV,	Temp_var,	mtj_seed \n");
-//$fwrite(fp,"	%g,	%g ,	%g,	%g,	%g,	%g 	\n",
-//PAP,	T,	STO,	RV,	Temp_var,	mtj_seed);
-		
 	counter=0;
 	FA=3322.53/RA;			    // initialization of resistance factor according to RA product
-
 	seed1 = mtj_seed;	        // process variability MC
 	seed2 = mtj_seed;	        // stochasticity MC
 
@@ -301,21 +290,20 @@ IcP=gp*surface;												// Critical current for P state
 PolaAP=`sqrt(TMRreal*(TMRreal+2))/(2*(TMRreal+1));			//Polarization state anti-parallel  
 gap=alpha*gamma*`e*Ms*tslreal*Hk/(40*`M_PI*(`ub*PolaAP));	//Critical current density  
 IcAP=gap*surface; 											// Critical current for AP state		 
-//$display("	Rap is : ", Rap, "	Vc", Vc, "	Vcp is ",Rp*IcP, "	VcAP is ", Rap*IcAP, "	0.8*VcAP is ", 0.8*Rap*IcAP, "	brown_threshold", brown_threshold); 
 
 /*------Counter of time when real current is higher than critical current */
 
-//@(above(Id-IcP,+1))   
-//begin
-//	P_APt = $abstime;
-//	NP_APt=1e9;		
-//end
+@(above(Id-IcP,+1))   
+begin
+	P_APt = $abstime;
+	NP_APt=1e9;		
+end
 
-//@(above(-Id-IcAP,+1))
-//begin
-//	AP_Pt = $abstime;
-//	NAP_Pt=1e9;  	
-//end
+@(above(-Id-IcAP,+1))
+begin
+	AP_Pt = $abstime;
+	NAP_Pt=1e9;  	
+end
 
 @(above(Vb-brown_threshold_P2AP,+1))
 begin
@@ -327,7 +315,6 @@ end
 @(above(Vc-brown_threshold_AP2P,+1))
 begin
 	NAP_Pt = $abstime;
-    //$write(fp,"%g\n ", NAP_Pt);
 	P_APt=1e9;
 	NP_APt=1e9;  	
 end
@@ -348,7 +335,6 @@ begin
 			ix=0.0;
 		end
 	end
-    //V(Ttrans)<+ix;						//Ttrans=store the state of the MTJ with time influence, non-volatile way	
     I(T1,T2)<+Id;						//Actualisation of the current of MTJ with the value calculated
 end				
 //------------------------------------------------------------------------------------------------------------------------------
@@ -356,10 +342,9 @@ else    								// transient analysis
 begin
 	if(ix==0)       				// parallel state
 	begin	
-/*
+
 		if(Vb>=IcP*Rp)				//Current higher than critical current, dynamic behavior: Sun model 
 		begin
-		//$display ("trans - stochastic - initial paral - Sun model ");
 			durationstatic=(`C+ln(`M_PI*`M_PI*(Em/(`Kb*temp*40*`M_PI))/4))*`e*1000*Ms*surface*tslreal*(1+P*P)/(4*`M_PI*2*`ub*P*10000*abs(Id-IcP));	//Average time needed for switching
 			if(STO==1)				//parallel -- Vb > Icp *Rp -- expon_ stochast
 			begin
@@ -382,13 +367,9 @@ begin
 			begin
 				ix=0.0;
 			end
-
-			//$fwrite(fp,"	%g,	%g ,	%g,	%g,	%g,	%g 	\n",
-			//1,	$abstime, Vb,	Vc,	Id,	duration);		
-	
 		end
 		else						// current smaller than critical current : Neel-Brown model
-*/	    
+	    
         if(Vb>brown_threshold_P2AP)	//added
 		begin
 			ix=0.0;
@@ -397,10 +378,8 @@ begin
 			begin
 				if (Vb<0.8*IcP*Rp)
 				begin
-		//$display ("trans - stochastic - initial paral - Neel_brown model ");	
 					if(STO==1) 
 					begin
-						//$display("// sto1 Neel");
 						duration=abs($rdist_exponential(seed2, tau));
 					end
 					else if(STO==2)
@@ -419,9 +398,6 @@ begin
 					begin
 						ix=0.0;
 					end
-
-					//$fwrite(fp,"	%g,	%g ,	%g,	%g,	%g,	%g 	\n",
-					//2,	$abstime, Vb,	Vc,	Id,	duration);		
 				end 			
 			end		
 		end
@@ -430,11 +406,9 @@ begin
 	//-----------------------------------------------------------------------------		
 	else       // initial state anti-parallel
     begin
-/*
+
 	   	if(Vc>=(IcAP*Rap)) // anti-parallel, current higher than critical current: Sun model
 		begin
-	//$display ("trans - stochastic - initial anti-paral - Sun model ");
-	//$display("seed2 ", seed2);
 			durationstatic=(`C+ln(`M_PI*`M_PI*(Em/(`Kb*temp*40*`M_PI))/4))*`e*1000*Ms*surface*tslreal*(1+P*P)/(4*`M_PI*2*`ub*P*10000*abs(-Id-IcAP));
 			if(STO==1)
 			begin
@@ -447,7 +421,6 @@ begin
 			else
 			begin
 				duration=durationstatic;
-				//$display("antiP Sun sto0");
 			end
 			if(duration<=($abstime-AP_Pt))
 			begin
@@ -458,19 +431,15 @@ begin
 				ix=1.0;
 			end
 		
-			//$fwrite(fp,"	%g,	%g ,	%g,	%g,	%g,	%g 	\n",
-			//3,	$abstime, Vb,	Vc,	Id,	duration);		
 		end 		
 		else			// trans - stochastic - anti-parallel - Neel Brwon 
-*/
+
 	    if(Vc>brown_threshold_AP2P)	//added
 		begin
 			tau=tau0*exp(Em*(1-abs(Id/IcAP))/(`Kb*temp*40*`M_PI));
 			if(Vc>brown_threshold_AP2P)	
 			begin
 				if (Vc<0.8*IcAP*Rap)
-		//$display ("trans - stochastic - initial anti-paral - Neel brown model");
-		//$display("seed2bbbb", seed2);
 				begin
 					if(STO==1)
 					begin				
@@ -483,24 +452,15 @@ begin
 					else
 					begin
 						duration=tau;
-						//$display("antiP NeelBrown sto0");
 					end	
 					if (duration<=($abstime-NAP_Pt))
                     begin 
-                    //$fwrite(fp,"\t%g, %g, \t%g, \t%g \n",
-                    //$abstime, NAP_Pt, $abstime-NAP_Pt, Vb);
-
 						ix=0.0;	
                    	end
 					else
 					begin
 						ix=1.0;
 					end
-
-					//$fwrite(fp,"	%g,	%g ,	%g,	%g,	%g,	%g 	\n",
-					//4,	$abstime, Vb,	Vc,	Id,	duration);		
-
-		//$display("seed 	|	duration", seed2, "	", duration);	
 				end
 			end
 		end
@@ -520,11 +480,9 @@ begin
 	I(n2) <+ capacitor * (ddt(V(n2)));
 end
 
-//$fwrite(fp,"	%g 	,%g 	,%g 	, %g 	\n", $abstime, Id,  durationstatic, tau);
 @(final_step) begin
 //$fclose(fp);
 end
-
 
 end // end of the analog begin 
 
