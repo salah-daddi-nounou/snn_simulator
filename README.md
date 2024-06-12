@@ -1,4 +1,6 @@
-<h1 style="text-align: center;">SPICE-Based SNN Simulator</h1>
+<div align='center'>
+<h1>SPICE-Based SNN Simulator</h1>
+</div>
 
 [![Documentation Status](https://readthedocs.org/projects/snn_simulator/badge/?version=latest)](https://salah-daddi-nounou.github.io/)
 
@@ -15,7 +17,7 @@ This project provides a framework for simulating spiking neural networks (SNNs) 
 
 ## Documentation
 
-Usage guide and comprehensive documentation are available [here](https://img.shields.io/badge/documentation-available-blue)](https://salah-daddi-nounou.github.io/)
+Usage guide and comprehensive documentation are available [here](https://salah-daddi-nounou.github.io/)
 
 ## Getting Started
 
@@ -47,3 +49,7 @@ If you use this framework, please cite our publication:
   publisher={IEEE}
 }
 ```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
