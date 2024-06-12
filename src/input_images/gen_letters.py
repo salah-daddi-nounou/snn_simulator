@@ -1,3 +1,10 @@
+"""
+This script generates binary images of letters, saves them in both .npy and .pkl formats, 
+and stores them in a specified directory. Each letter is represented by specific pixel 
+positions in a 5x5 image grid. Images are saved individually as .npy arrays, 
+and collectively as .pkl dict. all images are generated at once. 
+"""
+
 import numpy as np
 import os
 from matplotlib import pyplot as plt
@@ -29,8 +36,15 @@ save_dir = "letter_imgs/"
 os.makedirs(save_dir, exist_ok=True)
 
 letter_pixel_values = {}
-# Function to create and save letter images
+
 def create_letter_image(letter, positions):
+    """
+    Create and save an image of a specified letter.
+
+    Args:
+        letter (str): The letter to create an image for.
+        positions (list of tuples): The pixel positions of the letter in the image.
+    """
     image = np.full((image_size[0], image_size[1]), background_color, dtype=np.uint8)
 
     for x, y in positions:
@@ -38,7 +52,7 @@ def create_letter_image(letter, positions):
         letter_pixel_values[letter] = image.flatten()
 
     # Save the image
-    #plt.imsave(f'{save_dir}/generated_{letter}.png', image, format="png") # PNG 
+    # plt.imsave(f'{save_dir}/generated_{letter}.png', image, format="png") # PNG 
     np.save(f'{save_dir}/generated_{letter}.npy', image)                  # npy
 
 # Generate and save images for each letter
@@ -48,6 +62,6 @@ for letter, positions in letters.items():
 # Save the dictionary of all images to a pickle file
 file_path = f"{save_dir}/all_images.pkl"
 with open(file_path, 'wb') as pickle_file:
-        pickle.dump(letter_pixel_values, pickle_file)
+    pickle.dump(letter_pixel_values, pickle_file)
 
 print(f"Images generated and saved in the {save_dir} folder.")

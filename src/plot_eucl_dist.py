@@ -1,12 +1,32 @@
+"""
+This module calculates and plots the Euclidean distance between the final weights of trained SNNs 
+and the input images. The module provides functions to compute the distances for individual letters as well as average 
+distances across multiple letters.
+
+Functions:
+    eucl_dist: Calculate and plot Euclidean distances for a specific letter.
+    avg_eucl_dist: Calculate and plot average Euclidean distances across multiple letters.
+    calculate_dist: Helper function to calculate Euclidean distances for a given letter.
+    plot_distances: Helper function to plot the Euclidean distances.
+
+Example Usage:
+```python
+eucl_dist(trained_letters_dict, 'I')
+avg_eucl_dist(trained_letters_dict)
+```
+"""
+
 import numpy as np
 import os
 import glob
 import pickle
 import matplotlib.pyplot as plt
+
 '''
 Input images are stored in binary formats (individually: .npy arrays, 
-and collectively: .pkl dict) all files generated at once. 
+and collectively: .pkl dict) all files were generated at once. 
 '''
+
 '''
 trained_letters_dict = {
     'C': "../../snn_sim_folders/dat_1218_1212_pross_414*",
@@ -23,8 +43,8 @@ trained_letters_dict = {
     'U': "../../snn_sim_folders/dat_1220_1649_pross_155*",
 }
 '''
-#'C': "../../snn_sim_folders/dat_1222_*_pross_*_letC*"
 
+# 'C': "../../snn_sim_folders/dat_1222_*_pross_*_letC*"
 
 trained_letters_dict = {
     'C': "../../snn_sim_folders/dat_1225_*_pross_*_letC*",
@@ -44,6 +64,13 @@ VR_std = [i / 100 for i in range(0, 25, 5)]
 mtjs = [2, 4, 6, 8]
 
 def eucl_dist(trained_letters_dict, specific_letter):
+    """
+    Calculate and plot Euclidean distances for a specific letter.
+
+    Args:
+        trained_letters_dict (dict): Dictionary containing base directories for trained letters.
+        specific_letter (str): The letter to calculate distances for.
+    """
     # Load the all_images dictionary from the pickle file
     all_images = "input_images/letter_imgs/all_images.pkl"
     with open(all_images, 'rb') as pickle_file:
@@ -58,8 +85,13 @@ def eucl_dist(trained_letters_dict, specific_letter):
     else:
         print(f"Base directory for letter '{specific_letter}' not found in the provided dictionary.")
 
-# Averaging across multiple letters
 def avg_eucl_dist(trained_letters_dict):
+    """
+    Calculate and plot average Euclidean distances across multiple letters.
+
+    Args:
+        trained_letters_dict (dict): Dictionary containing base directories for trained letters.
+    """
     # Load the all_images dictionary from the pickle file
     all_images = "input_images/letter_imgs/all_images.pkl"
     with open(all_images, 'rb') as pickle_file:
@@ -87,8 +119,17 @@ def avg_eucl_dist(trained_letters_dict):
 
     plot_distances(average_distances, 'Average Euclidean Distance vs VR_std Across Letters')
 
-
 def calculate_dist(base_dir, letter_image):
+    """
+    Helper function to calculate Euclidean distances for a given letter.
+
+    Args:
+        base_dir (str): Base directory containing the trained folders.
+        letter_image (numpy.ndarray): The image of the specific letter.
+
+    Returns:
+        dict: Dictionary containing Euclidean distances for each combination of num_cells and VR_std.
+    """
     trained_folders = sorted(glob.glob(base_dir))
     euclidean_distances = {nc: {dev: [] for dev in VR_std} for nc in mtjs}
 
@@ -108,6 +149,13 @@ def calculate_dist(base_dir, letter_image):
     return euclidean_distances
 
 def plot_distances(euclidean_distances, title):
+    """
+    Helper function to plot the Euclidean distances.
+
+    Args:
+        euclidean_distances (dict): Dictionary containing Euclidean distances to plot.
+        title (str): Title of the plot.
+    """
     fig, axe1 = plt.subplots()
     for num_cells, dev_distances in euclidean_distances.items():
         devs = sorted(dev_distances.keys())
@@ -121,14 +169,14 @@ def plot_distances(euclidean_distances, title):
 
 # To calculate for a single letter
 eucl_dist(trained_letters_dict, 'I')
-#eucl_dist(trained_letters_dict, 'C')
-#eucl_dist(trained_letters_dict, 'K')
+# eucl_dist(trained_letters_dict, 'C')
+# eucl_dist(trained_letters_dict, 'K')
 eucl_dist(trained_letters_dict, 'L')
-#eucl_dist(trained_letters_dict, 'P')
-#eucl_dist(trained_letters_dict, 'H')
+# eucl_dist(trained_letters_dict, 'P')
+# eucl_dist(trained_letters_dict, 'H')
 eucl_dist(trained_letters_dict, 'O')
-#eucl_dist(trained_letters_dict, 'F')
-#eucl_dist(trained_letters_dict, 'T')
+# eucl_dist(trained_letters_dict, 'F')
+# eucl_dist(trained_letters_dict, 'T')
 eucl_dist(trained_letters_dict, 'U')
 
 # To calculate the average across multiple letters

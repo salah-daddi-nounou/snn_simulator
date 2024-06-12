@@ -65,8 +65,6 @@ plugins:
           rendering:
             show_type_hint: true
 
-
-
 markdown_extensions:
   - attr_list
   - md_in_html
@@ -78,9 +76,20 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.details
   - pymdownx.superfences
+  - admonition
+  - codehilite
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
 
 nav:
-    - Introduction: index.md
-    - Netlist generator: net_generator.md
-    
-
+    - Home: index.md
+    - Usage: usage.md 
+    - Simulation Workflow: workflow.md 
+    - API Refrence: 
+      - API: api.md
+      - Device Models:
+        - Input Neuron: in_neuron.md
+        - Output Neuron: out_neuron.md
+        - MTJ : mtj_model.md

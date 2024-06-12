@@ -1,10 +1,25 @@
+"""
+This script extracts specific images from the MNIST dataset and saves them as .npy files.
+The script loads MNIST images from the idx3-ubyte format and saves selected images in a specified directory.
+
+Functions:
+    load_idx3_ubyte: Loads MNIST images from a given idx3-ubyte file.
+"""
+
 import numpy as np
 import os
 import matplotlib.pyplot as plt 
 
-
 def load_idx3_ubyte(idx3_ubyte_file):
-    """Load MNIST data from path"""
+    """
+    Load MNIST data from the given file path.
+
+    Args:
+        idx3_ubyte_file (str): Path to the idx3-ubyte file containing MNIST images.
+
+    Returns:
+        np.ndarray: Array of shape (num_images, rows, cols) containing the MNIST images.
+    """
     with open(idx3_ubyte_file, 'rb') as f:
         magic, num_images, rows, cols = np.frombuffer(f.read(16), dtype=np.dtype('>i4'))
         assert magic == 2051, 'Invalid magic number'

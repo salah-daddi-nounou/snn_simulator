@@ -1,3 +1,20 @@
+"""
+This module provides utility functions for substituting values into templates
+and executing shell commands. It is designed to facilitate the automation
+of script generation and execution processes.
+
+Functions:
+    substitute_templ: Reads a template from a file, substitutes values from
+    provided dictionaries, and writes the result to an output file.
+    exec_cmd: Executes a given shell command, optionally displaying the output.
+
+Example Usage:
+```python
+substitute_templ('input_template.txt', 'output_file.txt', {'key1': 'value1'}, {'key2': 'value2'})
+exec_cmd('ls -la', verbose=True)
+```
+"""
+
 from string import Template
 from subprocess import run, DEVNULL
 from typing import Dict
